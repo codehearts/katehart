@@ -33,8 +33,8 @@ route '/media/*/' do
 	item.identifier.chop + '.' + item[:extension]
 end
 
-# Exclude files in the exclude/ directory from compilation
-route '/exclude/*/' do
+# Exclude files in the data/ directory from compilation
+route '/data/*/' do
 	# Don't route
 	nil
 end

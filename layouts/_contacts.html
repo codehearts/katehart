@@ -1,0 +1,11 @@
+<ul class="contacts">
+	<% contacts.each do |contact| %>
+	<li>
+		<a href="<%= contact[:url] %>"><%= contact[:medium] %></a>
+		<p>
+			<%= contact[:name] %>
+			<%= contact[:description] %>
+		</p>
+	</li>
+	<% end %>
+</ul>
