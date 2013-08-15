@@ -1,14 +1,15 @@
 ---
 title: The portfolio of Nate Hart
+contacts_heading: Get in touch
+contacts: [email, twitter, github]
 ---
 
-# Hello. I am *Nate Hart*.
-
-<% content_for :profile_body do %>
-I'm an aspiring web designer and developer who's been making things on the web for most of my life. Currently I'm studying computer science at the University of Rochester.
+<%# Display my profile with contact information %>
+<% content_for :profile_footer do %>
+	<%=
+		render 'partials/contacts',
+		:heading  => @item[:contacts_heading],
+		:contacts => @item[:contacts]
+	%>
 <% end %>
-
-<%= render 'partials/profile' %>
-
-## Get in touch
-<%= render 'partials/contacts' %>
+<%= render 'partials/profiles/profile', :profile => 'nate hart' %>

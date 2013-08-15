@@ -1,0 +1,9 @@
+<% profile = profile_item(@profile) %>
+
+<article class="profile">
+	<h1><%= profile[:heading] %></h1>
+
+	<%= profile.raw_content %>
+
+	<%= content_for(@item, :profile_footer) %>
+</article>

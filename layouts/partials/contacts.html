@@ -1,5 +1,7 @@
+<% if @heading %><h2><%= @heading %></h2><% end %>
+
 <ul class="contacts">
-	<% contacts.each do |contact| %>
+	<% ordered_contact_items(@contacts).each do |contact| %>
 	<li>
 		<a href="<%= contact[:url] %>"><%= contact[:medium] %></a>
 		<p>
