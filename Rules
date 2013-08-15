@@ -13,29 +13,29 @@
 #	item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #	because “*” matches zero or more characters.
 
+# Don’t filter or layout media files
 compile '/media/*/' do
-	# Don’t filter or layout
 	nil
 end
 
-
 compile '*' do
 	if item.binary?
-		# don’t filter binary items
+		# Don’t filter binary items
 	else
-		filter :erb
+		filter :kramdown
 		layout 'default'
 	end
 end
+
+
 
 route '/media/*/' do
 	# Copy media files over as is
 	item.identifier.chop + '.' + item[:extension]
 end
 
-# Exclude files in the data/ directory from compilation
+# Don't route data files
 route '/data/*/' do
-	# Don't route
 	nil
 end
 
