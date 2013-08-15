@@ -3,9 +3,9 @@ module Portfolio
 	# Content directory where portfolio entries are stored
 	@@portfolio_dir = '/data/portfolio/'
 	# Content subdirectory where in-progress portfolio entries are stored
-	@@in_progress_dir = @@portfolio_dir + '/in-progress/'
+	@@in_progress_dir = @@portfolio_dir + 'in-progress/'
 	# Content subdirectory where scrapped portfolio entries are stored
-	@@scraps_dir = @@portfolio_dir + '/scraps/'
+	@@scraps_dir = @@portfolio_dir + 'scraps/'
 	# Cache of known portfolio items
 	# Hash with keys 'all', 'completed', 'in-progress', and 'scraps'
 	@@known_portfolio_entries = nil
