@@ -1,3 +1,15 @@
+<%#
+	Generates markup for use with picturefill.js.
+
+	Arguments:
+		alt (string): The image alt.
+		images (array): An array of image hashes with the following values:
+			src (string): The image's source.
+			high_src (string): Optional high-resolution image source.
+			is_default (bool): Whether this image should be used when JS is not available. (Default false)
+			serve_old_ie (bool): Whether to serve this image to old IE which can't handle picturefill.js. (Default false)
+
+%>
 <span data-picture data-alt="<%= @alt %>">
 	<% @images.each do |image| %>
 		<span data-src="<%= image['src'] %>" data-media="<%= image['query'] %>"></span>
