@@ -1,0 +1,13 @@
+<span data-picture data-alt="<%= @item[:alt] %>">
+	<% @item[:images].each do |image| %>
+	<span data-src="<%= image.src %>" data-media="<%= image.query %>"></span>
+	<% end %>
+
+	<!--[if (lt IE 9) & (!IEMobile)]>
+		<span data-src="<%= @item[:images].find { |i| i.serve_old_ie }"></span>
+	<![endif]-->
+
+	<noscript>
+		<img src="<%= @item[:images].find { |i| i.is_default }" alt="<%= @item[:alt] %>" />
+	</noscript>
+</span>
