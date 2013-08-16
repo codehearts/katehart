@@ -1,7 +1,13 @@
-<h2><%= @item[:title] %></h2>
+<% if @primary_block %><h2><%= @item[:title] %></h2><% end %>
+
 <%=
 	render 'partials/image',
 	:alt    => @image_alt,
 	:images => @images
 %>
+
 <%= content_for(@item, :body) %>
+
+<% if @primary_block and @item[:url] %>
+	<a href="<%= @item[:url] %>" target="_blank"><%= @item[:url_text] %></a>
+<% end %>

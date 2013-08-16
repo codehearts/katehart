@@ -1,2 +1,2 @@
-<h2><%= @item[:title] %></h2>
+<% if @primary_block %><h2><%= @item[:title] %></h2><% end %>
 <%= content_for(@item, :body) %>
