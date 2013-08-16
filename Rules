@@ -35,7 +35,12 @@ route '/media/*/' do
 end
 
 # Don't route data files
-route '/data/*/' do
+route '/data/*' do
+	nil
+end
+
+# Don't route portfolio items
+route '/portfolio/*' do
 	nil
 end
 

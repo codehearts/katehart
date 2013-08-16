@@ -1,7 +1,7 @@
 module Portfolio
 
 	# Content directory where portfolio entries are stored
-	@@portfolio_dir = '/data/portfolio/'
+	@@portfolio_dir = '/portfolio/'
 	# Content subdirectory where in-progress portfolio entries are stored
 	@@in_progress_dir = @@portfolio_dir + 'in-progress/'
 	# Content subdirectory where scrapped portfolio entries are stored
