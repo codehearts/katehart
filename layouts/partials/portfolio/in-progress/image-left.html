@@ -1,0 +1,7 @@
+<h2><%= @item[:title] %></h2>
+<%=
+	render 'partials/image',
+	:alt    => @image_alt,
+	:images => @images
+%>
+<%= content_for(@item, :body) %>

@@ -11,4 +11,18 @@ url_text: See my progress so far
 <p>The first step was creating a universal design for all of their sites. The design itself will be adaptive, fitting to whatever device it's displayed on. Their public site was moved to WordPress, which I tweaked to be more friendly to future editors who may not be very tech-savvy. After that, there's plenty of code from previous CIF members to refactor and prepare for the new design. Once everything's been updated to use the new design, I'll be considering new features and content to add while corresponding with CIF's tech officers.</p>
 <% end %>
 
-<%= render 'partials/portfolio/in-progress/default' %>
+<%=
+	render 'partials/portfolio/in-progress/image-left',
+	:image_alt => 'Mockup of the CIF home page',
+	:images    => [
+		{
+		'src'          => 'media/images/portfolio/CIF.png',
+		'is_default'   => true,
+		'serve_old_ie' => true,
+		},
+		{
+		'src'   => 'media/images/portfolio/CIF.png',
+		'query' => '(min-resolution: 144dpi)',
+		},
+	]
+%>
