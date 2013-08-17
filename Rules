@@ -13,8 +13,19 @@
 #	item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #	because “*” matches zero or more characters.
 
+unless defined? LOADED_DEFAULT_CONFIG
+	LOADED_DEFAULT_CONFIG = true
+
+	require 'compass'
+	Compass.add_project_configuration 'compass_config.rb' 
+end
+
+compile 'sass/*' do
+	filter :sass, Compass.sass_engine_options
+end
+
 # Don’t filter or layout media files
-compile '/media/*/' do
+compile '/media/*' do
 	nil
 end
 
@@ -29,7 +40,20 @@ end
 
 
 
-route '/media/*/' do
+route '/sass/style' do
+	'/css/style.css'
+end
+
+route '/sass/print' do
+	'/css/print.css'
+end
+
+# Don't route other sass files
+route '/sass/*' do
+	nil
+end
+
+route '/media/*' do
 	# Copy media files over as is
 	item.identifier.chop + '.' + item[:extension]
 end
