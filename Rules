@@ -20,7 +20,8 @@ unless defined? LOADED_DEFAULT_CONFIG
 	Compass.add_project_configuration 'compass_config.rb' 
 end
 
-compile '/media/sass/*' do
+# Compile sass/style.scss with Compass
+compile '/media/sass/style/' do
 	filter :sass, Compass.sass_engine_options
 end
 
@@ -43,11 +44,6 @@ end
 # Move compiled style.scss to a css dir
 route '/media/sass/style' do
 	'/media/css/style.css'
-end
-
-# Move compiled print.scss to a css dir
-route '/media/sass/print' do
-	'/media/css/print.css'
 end
 
 # Don't route other sass files

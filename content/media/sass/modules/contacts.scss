@@ -1,0 +1,23 @@
+.contacts {
+	& > li {
+		margin-right: 1em;
+		display: inline-block;
+
+		&:hover {
+			.contact-info {
+				top: auto;
+				left: auto;
+			}
+		}
+	}
+}
+
+.contact-link {
+	@include adjust-font-size-to(24px);
+}
+
+.contact-info {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}

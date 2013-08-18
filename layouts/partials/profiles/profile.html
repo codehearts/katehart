@@ -3,7 +3,11 @@
 <article class="profile">
 	<h1><%= profile[:heading] %></h1>
 
-	<%= profile.raw_content %>
+	<div class="profile-body">
+		<%= profile.raw_content %>
+	</div>
 
-	<%= content_for(@item, :profile_footer) %>
+	<footer>
+		<%= content_for(@item, :profile_footer) %>
+	</footer>
 </article>

@@ -1,0 +1,45 @@
+$sans-serif: futura-pt, 'Futura PT', Futura, 'Avenir Next', Avenir, sans-serif;
+$serif: adobe-garamond-pro,  'Adobe Garamond Pro', Georgia, 'Times New Roman', Times, serif;
+
+$base-font-size: 21px;
+$base-line-height: 26px;
+
+@import 'compass/typography/vertical_rhythm';
+@include establish-baseline;
+
+body {
+	font-family: $serif;
+	color: $primary-text-color;
+}
+
+h1, h2 {
+	@include adjust-font-size-to(36px);
+	margin: rhythm(3) 0;
+	text-transform: lowercase;
+	font-family: $sans-serif;
+	color: $secondary-text-color;
+
+	& > em {
+		font-style: normal;
+		color: $accent-color;
+	}
+}
+
+h3 {
+	@include adjust-font-size-to(24px, 1);
+	margin: rhythm(1) 0;
+	text-transform: lowercase;
+	font-family: $serif;
+	color: $primary-text-color;
+}
+
+a {
+	text-decoration: none;
+	text-transform: lowercase;
+	font-style: italic;
+	color: $primary-text-color;
+
+	&:hover {
+		color: $accent-color;
+	}
+}
