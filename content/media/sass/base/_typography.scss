@@ -16,7 +16,7 @@ body {
 	color: $primary-text-color;
 }
 
-h1 {
+h1, h2 {
 	@include adjust-font-size-to($h1-font-size);
 	margin: rhythm(3, $h1-font-size) 0;
 	text-transform: lowercase;
@@ -29,14 +29,6 @@ h1 {
 	}
 }
 
-h2 {
-	@include adjust-font-size-to($h2-font-size);
-	margin: rhythm(1, $h2-font-size) 0;
-	text-transform: lowercase;
-	font-family: $serif;
-	color: $secondary-text-color;
-}
-
 h3 {
 	@include adjust-font-size-to($h3-font-size);
 	margin: rhythm(1, $h3-font-size) 0;
@@ -45,12 +37,17 @@ h3 {
 	color: $primary-text-color;
 }
 
-.inline-heading {
+.heading-aside {
 	display: inline-block;
+	font-family: $serif;
+	color: $secondary-text-color;
 
-	// Targets an inline heading directly after an inline heading
-	& + & {
-		margin-left: 1em;
+	h1 & {
+		@include adjust-font-size-to($h2-font-size, $from-size: $h1-font-size);
+	}
+
+	h2 & {
+		@include adjust-font-size-to($h3-font-size, $from-size: $h2-font-size);
 	}
 }
 
