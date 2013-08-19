@@ -1,0 +1,28 @@
+%tooltip {
+	$tip-size: 6px;
+
+	background: $accent-color;
+	margin-top: rhythm();
+	padding: 3px 10px 6px;
+	position: relative;
+	text-transform: lowercase;
+	font-family: $sans-serif;
+	color: $accent-contrast-color;
+	pointer-events: none;
+
+	// Tip
+	&::before {
+
+		content: '';
+		display: block;
+		position: absolute;
+		top: -$tip-size * 2;
+		left: 0;
+		width: 0;
+		height: 0;
+
+		border: $tip-size solid $accent-color;
+		border-top-color: transparent;
+		border-right-color: transparent;
+	}
+}

@@ -13,11 +13,18 @@
 }
 
 .contact-link {
-	@include adjust-font-size-to(24px);
+	@include adjust-font-size-to(24px, 1);
 }
 
 .contact-info {
+	@extend %tooltip;
+
 	position: absolute;
 	top: -9999px;
 	left: -9999px;
+}
+
+.contact-desc {
+	margin-top: rhythm(0.5);
+	display: block;
 }
