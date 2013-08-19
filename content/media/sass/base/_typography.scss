@@ -5,7 +5,7 @@ $base-font-size: 21px;
 $base-line-height: 26px;
 $min-line-padding: 0;
 $h1-font-size: 36px;
-$h2-font-size: 24px;
+$h2-font-size: 36px;
 $h3-font-size: 24px;
 
 @import 'compass/typography/vertical_rhythm';
@@ -43,7 +43,7 @@ h3 {
 	color: $secondary-text-color;
 
 	h1 & {
-		@include adjust-font-size-to($h2-font-size, $from-size: $h1-font-size);
+		@include adjust-font-size-to($h3-font-size, $from-size: $h1-font-size);
 	}
 
 	h2 & {
