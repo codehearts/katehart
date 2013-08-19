@@ -13,7 +13,7 @@
 }
 
 .contact-link {
-	@include adjust-font-size-to(24px, 1);
+	@include adjust-font-size-to($h3-font-size);
 }
 
 .contact-info {
@@ -25,6 +25,6 @@
 }
 
 .contact-desc {
-	margin-top: rhythm(0.5);
+	margin-top: 0.5em;
 	display: block;
 }

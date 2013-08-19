@@ -3,6 +3,10 @@ $serif: adobe-garamond-pro,  'Adobe Garamond Pro', Georgia, 'Times New Roman', T
 
 $base-font-size: 21px;
 $base-line-height: 26px;
+$min-line-padding: 0;
+$h1-font-size: 36px;
+$h2-font-size: 24px;
+$h3-font-size: 24px;
 
 @import 'compass/typography/vertical_rhythm';
 @include establish-baseline;
@@ -12,9 +16,9 @@ body {
 	color: $primary-text-color;
 }
 
-h1, h2 {
-	@include adjust-font-size-to(36px);
-	margin: rhythm(3) 0;
+h1 {
+	@include adjust-font-size-to($h1-font-size);
+	margin: rhythm(3, $h1-font-size) 0;
 	text-transform: lowercase;
 	font-family: $sans-serif;
 	color: $secondary-text-color;
@@ -25,12 +29,29 @@ h1, h2 {
 	}
 }
 
+h2 {
+	@include adjust-font-size-to($h2-font-size);
+	margin: rhythm(1, $h2-font-size) 0;
+	text-transform: lowercase;
+	font-family: $serif;
+	color: $secondary-text-color;
+}
+
 h3 {
-	@include adjust-font-size-to(24px, 1);
-	margin: rhythm(1) 0;
+	@include adjust-font-size-to($h3-font-size);
+	margin: rhythm(1, $h3-font-size) 0;
 	text-transform: lowercase;
 	font-family: $serif;
 	color: $primary-text-color;
+}
+
+.inline-heading {
+	display: inline-block;
+
+	// Targets an inline heading directly after an inline heading
+	& + & {
+		margin-left: 1em;
+	}
 }
 
 a {
