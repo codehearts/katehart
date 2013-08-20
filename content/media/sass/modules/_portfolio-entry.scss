@@ -1,6 +1,44 @@
 .portfolio-entry {
 	margin-bottom: rhythm(3);
 
+	// Completed portfolio entries
+	&.completed {
+		// Base styles
+
+		.entry-heading {
+			@include push(2);
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		.entry-date {
+			@include adjust-font-size-to($h4-font-size);
+			@include push(2);
+			margin-bottom: rhythm(1);
+			font-family: $sans-serif;
+			color: $secondary-text-color;
+		}
+
+		.entry-body {
+			margin-top: rhythm(1);
+		}
+
+		.entry-link {
+			@include adjust-font-size-to($h3-font-size);
+			border-bottom: 3px solid $accent-color;
+			font-family: $sans-serif;
+			font-style: normal;
+			color: $accent-color;
+
+			&:hover {
+				background-color: $accent-color;
+				color: $accent-contrast-color;
+			}
+		}
+		
+		@import 'portfolio/default';
+	}
+
 	// In-progress portfolio entries
 	&.in-progress {
 		// Base styles

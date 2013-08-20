@@ -1,0 +1,19 @@
+.default {
+	@include span(19);
+	@include push(2);
+
+	.entry-body {
+		@include span(7, 19);
+		float: left;
+	}
+
+	.entry-image {
+		@include span(11, 19);
+		@include push(1, 19);
+		float: left;
+
+		img {
+			max-width: 100%;
+		}
+	}
+}

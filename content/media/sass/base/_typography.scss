@@ -1,14 +1,17 @@
+@import 'compass/css3/transform';
+@import 'compass/typography/vertical_rhythm';
+
 $sans-serif: futura-pt, 'Futura PT', Futura, 'Avenir Next', Avenir, sans-serif;
 $serif: adobe-garamond-pro,  'Adobe Garamond Pro', Georgia, 'Times New Roman', Times, serif;
 
 $base-font-size: 21px;
 $base-line-height: 26px;
 $min-line-padding: 0;
-$h1-font-size: 36px;
-$h2-font-size: 36px;
-$h3-font-size: 24px;
+$h1-font-size: 48px;
+$h2-font-size: 48px;
+$h3-font-size: 26px;
+$h4-font-size: 21px;
 
-@import 'compass/typography/vertical_rhythm';
 @include establish-baseline;
 
 body {
@@ -16,7 +19,7 @@ body {
 	color: $primary-text-color;
 }
 
-h1, h2 {
+h1 {
 	@include adjust-font-size-to($h1-font-size);
 	margin: rhythm(3, $h1-font-size) 0;
 	text-transform: lowercase;
@@ -27,6 +30,11 @@ h1, h2 {
 		font-style: normal;
 		color: $accent-color;
 	}
+}
+
+h2 {
+	@extend h1;
+	color: $accent-color;
 }
 
 h3 {
@@ -56,6 +64,7 @@ p, ol, ul, blockquote {
 }
 
 a {
+	display: inline-block;
 	text-decoration: none;
 	text-transform: lowercase;
 	font-style: italic;
@@ -63,5 +72,9 @@ a {
 
 	&:hover {
 		color: $accent-color;
+	}
+
+	&:active {
+		@include translate(1px,1px);
 	}
 }

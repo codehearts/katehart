@@ -1,6 +1,6 @@
 <% if @config[:primary_block] %>
 	<h2 class="entry-heading"><%= @item[:title] %></h2>
-	<h3><%= @item[:date] %></h3>
+	<h3 class="entry-date"><%= @item[:date] %></h3>
 <% end %>
 <div class="default">
 	<div class="entry-body">
@@ -8,7 +8,7 @@
 
 		<% if @config[:primary_block] and @item[:url] %>
 			<a href="<%= @item[:url] %>" class="entry-link" target="_blank">
-				<%= @item[:url_text] %>
+				Visit Site
 			</a>
 		<% end %>
 	</div>
