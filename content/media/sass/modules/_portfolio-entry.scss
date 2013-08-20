@@ -1,0 +1,20 @@
+.portfolio-entry {
+	// In-progress portfolio entries
+	&.in-progress {
+		// Base styles
+
+		margin-bottom: rhythm(3);
+
+		.entry-heading {
+			margin-top: 0;
+			text-transform: none;
+		}
+
+		.entry-link {
+			@include adjust-font-size-to($h3-font-size);
+		}
+
+		@import 'portfolio/in-progress/default';
+		@import 'portfolio/in-progress/image-left';
+	}
+}

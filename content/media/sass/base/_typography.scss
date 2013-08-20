@@ -51,6 +51,10 @@ h3 {
 	}
 }
 
+p, ol, ul, blockquote {
+	margin-bottom: rhythm(1);
+}
+
 a {
 	text-decoration: none;
 	text-transform: lowercase;

@@ -1,0 +1,25 @@
+.image-left {
+	@include span(17);
+	@include push(1);
+	overflow: hidden;
+
+	.entry-image {
+		@include span(8, 17);
+		float: left;
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	.entry-body {
+		@include span(7, 17);
+		@include push(2, 17);
+		float: left;
+	}
+
+	.entry-heading {
+		@include span(8, 7);
+		@include pull(1, 7);
+	}
+}

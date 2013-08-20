@@ -8,6 +8,11 @@ $grid-column-width: ($grid-width / $grid-columns) / $grid-width * 100%;
 	}
 }
 
+@mixin span($columns, $parent-size: $grid-columns) {
+	$column-width: ($grid-width / $parent-size) / $grid-width;
+	width: $column-width * $columns * 100%;
+}
+
 @mixin push($push-by, $parent-size: $grid-columns) {
 	$column-width: ($grid-width / $parent-size) / $grid-width;
 	margin-left: $column-width * $push-by * 100%;
