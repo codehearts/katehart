@@ -1,0 +1,23 @@
+<% if @config[:primary_block] %>
+	<h2 class="entry-heading"><%= @item[:title] %></h2>
+	<h3><%= @item[:date] %></h3>
+<% end %>
+<div class="default">
+	<div class="entry-body">
+		<%= content_for(@item, :body) %>
+
+		<% if @config[:primary_block] and @item[:url] %>
+			<a href="<%= @item[:url] %>" class="entry-link" target="_blank">
+				<%= @item[:url_text] %>
+			</a>
+		<% end %>
+	</div>
+
+	<figure class="entry-image">
+		<%=
+			render 'partials/image',
+			:alt    => @config[:image_alt],
+			:images => @config[:images]
+		%>
+	</figure>
+</div>

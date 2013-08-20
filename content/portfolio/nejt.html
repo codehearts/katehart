@@ -1,0 +1,29 @@
+---
+title: Nejt
+date: 2012-03-19
+url: http://nejt.net
+---
+
+<% content_for :body do %>
+<p>Nejt is my public sketchbook: a collection of all things visual and audial that I create. As a multimedia blog utilizing the latest in html5 and css3, it also serves as a playground for me to experiment with designing and developing for the web.</p>
+
+<p>As someone who is constantly creating things, I wanted a place where I could post my music and drawings to share them with the world. That place is Nejt, a multimedia blog running on WordPress that uses some of the latest in html and css to provide a unique experience.</p>
+
+<p>Like most of my side projects, it serves as a safe place to experiment with new technology and try new things. While Nejt does make use of html5 audio and other innovative additions to the web, it degrades gracefully in less capable browsers.</p>
+<% end %>
+
+<%=
+	render 'partials/portfolio/default',
+	:config => {
+		:primary_block => true,
+		:image_alt => 'Screenshot of the Nejt home page',
+		:images => [
+			{
+			'src'          => 'media/images/portfolio/nejt.png',
+			'high_src'     => 'media/images/portfolio/nejt@2x.png',
+			'is_default'   => true,
+			'serve_old_ie' => true,
+			}
+		]
+	}
+%>
