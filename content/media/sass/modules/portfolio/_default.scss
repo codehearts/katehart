@@ -1,15 +1,15 @@
 .default {
-	@include span(19);
-	@include push(2);
+	overflow: hidden;
 
 	.entry-body {
-		@include span(7, 19);
+		@include span(7);
+		@include push(2);
 		float: left;
 	}
 
 	.entry-image {
-		@include span(11, 19);
-		@include push(1, 19);
+		@include span(11);
+		@include push(1);
 		float: left;
 
 		img {
