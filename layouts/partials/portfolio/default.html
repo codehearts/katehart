@@ -1,4 +1,4 @@
-<% if @config[:primary_block] %>
+<% if @layout_config[:primary_block] %>
 	<h2 class="entry-heading"><%= @item[:title] %></h2>
 	<h3 class="entry-date"><%= @item[:date] %></h3>
 <% end %>
@@ -6,7 +6,7 @@
 	<div class="entry-body">
 		<%= content_for(@item, :body) %>
 
-		<% if @config[:primary_block] and @item[:url] %>
+		<% if @layout_config[:primary_block] and @item[:url] %>
 			<a href="<%= @item[:url] %>" class="entry-link" target="_blank">
 				Visit Site
 			</a>
@@ -16,8 +16,8 @@
 	<figure class="entry-image">
 		<%=
 			render 'partials/image',
-			:alt    => @config[:image_alt],
-			:images => @config[:images]
+			:alt    => @layout_config[:image_alt],
+			:images => @layout_config[:images]
 		%>
 	</figure>
 </div>
