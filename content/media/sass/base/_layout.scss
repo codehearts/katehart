@@ -1,6 +1,10 @@
 body {
 	@include downward-triangle-background($accent-color);
+	background-color: $background-color;
     background-repeat: repeat-x;
 	background-position: top center;
+}
+
+.container {
 	padding: 0 1%;
 }

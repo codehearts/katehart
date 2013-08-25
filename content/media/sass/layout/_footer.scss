@@ -1,0 +1,20 @@
+#footer {
+	@extend .container;
+
+	@include downward-triangle-background($background-color);
+	background-color: $accent-color;
+    background-repeat: repeat-x;
+	background-position: top center;
+	margin-top: rhythm(5);
+	padding-top: rhythm(2);
+	padding-bottom: rhythm(2);
+
+	& > h1 {
+		margin-top: 0;
+		color: $primary-text-color;
+
+		& > em {
+			color: $accent-contrast-color;
+		}
+	}
+}

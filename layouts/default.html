@@ -12,6 +12,18 @@
 	<script>try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-	<%= yield %>
+	<div class="container">
+		<%= yield %>
+	</div>
+
+	<footer id="footer" role="contentinfo">
+		<h1>That's it for now. <em>Thank you</em> for checking out my portfolio!</h1>
+
+		<%=
+		render 'partials/contacts',
+		:heading  => @item[:contacts_heading],
+		:contacts => @item[:contacts]
+		%>
+	</footer>
 </body>
 </html>
