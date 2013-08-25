@@ -1,15 +1,12 @@
 ---
 title: The portfolio of Nate Hart
-contacts_heading: Get in touch
-contacts: [email, twitter, github]
 ---
 
 <%# Display my profile with contact information %>
 <% content_for :profile_footer do %>
 	<%=
 		render 'partials/contacts',
-		:heading  => @item[:contacts_heading],
-		:contacts => @item[:contacts]
+		:contacts => $contacts
 	%>
 <% end %>
 <%= render 'partials/profiles/profile', :profile => 'nate hart' %>
