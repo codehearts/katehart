@@ -30,11 +30,23 @@ h1 {
 		font-style: normal;
 		color: $accent-color;
 	}
+
+	.inverted & {
+		color: $primary-text-color;
+
+		& > em {
+			color: $accent-contrast-color;
+		}
+	}
 }
 
 h2 {
 	@extend h1;
 	color: $accent-color;
+
+	.inverted & {
+		color: $accent-contrast-color;
+	}
 }
 
 h3 {
@@ -76,5 +88,13 @@ a {
 
 	&:active {
 		@include translate(1px,1px);
+	}
+
+	.inverted & {
+		color: $accent-contrast-color;
+
+		&:hover {
+			color: $primary-text-color;
+		}
 	}
 }

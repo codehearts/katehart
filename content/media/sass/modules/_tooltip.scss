@@ -25,4 +25,16 @@
 		border-top-color: transparent;
 		border-right-color: transparent;
 	}
+
+	.inverted & {
+		background-color: $accent-contrast-color;
+		color: $accent-color;
+
+		// Tip
+		&::before {
+			border-color: $accent-contrast-color;
+			border-top-color: transparent;
+			border-right-color: transparent;
+		}
+	}
 }

@@ -16,13 +16,17 @@
 		<%= yield %>
 	</div>
 
-	<footer id="footer" role="contentinfo">
+	<footer id="footer" class="inverted" role="contentinfo">
 		<h1>That's it for now. <em>Thank you</em> for checking out my portfolio!</h1>
 
-		<%=
-		render 'partials/contacts',
-		:contacts => $contacts
-		%>
+		<div id="footer-contents">
+			<%=
+			render 'partials/contacts',
+			:contacts => $contacts
+			%>
+
+			<p class="copyright">&copy; 2013 Nate Hart</p>
+		</div>
 	</footer>
 </body>
 </html>
