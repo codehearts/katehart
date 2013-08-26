@@ -13,11 +13,8 @@
 		<% end %>
 	</div>
 
-	<figure class="entry-image">
-		<%=
-			render 'partials/image',
-			:alt    => @layout_config[:image_alt],
-			:images => @layout_config[:images]
-		%>
-	</figure>
+	<%=
+		render 'partials/portfolio/shared/entry-image',
+		:layout_config => @layout_config
+	%>
 </div>

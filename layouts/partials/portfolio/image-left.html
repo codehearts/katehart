@@ -1,0 +1,10 @@
+<div class="default">
+	<%=
+		render 'partials/portfolio/shared/entry-image',
+		:layout_config => @layout_config
+	%>
+
+	<div class="entry-body">
+		<%= content_for(@item, :body) %>
+	</div>
+</div>
