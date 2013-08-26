@@ -1,0 +1,49 @@
+---
+title: About Life
+date: 2011-06-18
+url: http://www.vonhanaboutlife.com/
+---
+
+<% content_for :body do %>
+<p>About Life is a book that seeks to examine the philosophical questions that arose as the author escaped from Vietnam and adapted to life in the United States. The site presents visitors with questions explored in the book along with excerpts, and features a blog where the author continues to share his thoughts.</p>
+
+<p>About Life is a book that examines the philosophical questions the author faced as he escaped from Vietnam and adapted to life in the United States. I was approached by the author to create a promotional website for the book where he could continue to share his thoughts.</p>
+
+<p>The home page is an interactive version of the book’s cover that presents visitors with questions faced by the author and allows them to read excerpts from those parts of the book. There is also a blog where the author continues to write, as well as links for purchasing a copy of the book.</p>
+<% end %>
+
+<%=
+	render $portfolio_layouts+'image-right',
+	:layout_config => {
+		:primary_block => true,
+		:image_alt => 'Screenshot of the About Life home page',
+		:images => [
+			{
+			'src'      => $portfolio_images+'about-life/home.png',
+			'high_src' => $portfolio_images+'about-life/home@2x.png',
+			'is_default'   => true,
+			'serve_old_ie' => true,
+			}
+		]
+	}
+%>
+
+<% content_for :body do %>
+<p>The blog takes on a visually lighter design, while retaining the home page&rsquo;s dark header, which is based on the book&rsquo;s cover.</p>
+<% end %>
+
+<%=
+	render $portfolio_layouts+'image-left',
+	:layout_config => {
+		:primary_block => true,
+		:image_alt => 'Screenshot of the About Life blog',
+		:images => [
+			{
+			'src'      => $portfolio_images+'about-life/blog.png',
+			'high_src' => $portfolio_images+'about-life/blow@2x.png',
+			'is_default'   => true,
+			'serve_old_ie' => true,
+			}
+		]
+	}
+%>
