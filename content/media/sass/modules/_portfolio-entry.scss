@@ -5,6 +5,10 @@
 	&.completed {
 		// Base styles
 
+		& > .entry-layout {
+			margin-bottom: rhythm(1);
+		}
+
 		.entry-heading {
 			@include push(2);
 			margin-top: 0;
