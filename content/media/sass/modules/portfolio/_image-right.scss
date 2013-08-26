@@ -1,0 +1,19 @@
+.image-right {
+	overflow: hidden;
+
+	.entry-body {
+		@include span(7);
+		@include push(2);
+		float: left;
+	}
+
+	.entry-image {
+		@include span(11);
+		@include push(1);
+		float: left;
+
+		img {
+			max-width: 100%;
+		}
+	}
+}

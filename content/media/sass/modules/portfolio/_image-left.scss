@@ -1,9 +1,10 @@
-.default {
+.image-left {
 	overflow: hidden;
 
 	.entry-body {
 		@include span(7);
-		@include push(2);
+		@include push(1);
+		margin-top: rhythm(2);
 		float: left;
 	}
 

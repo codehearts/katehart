@@ -36,7 +36,8 @@
 			}
 		}
 		
-		@import 'portfolio/default';
+		@import 'portfolio/image-right';
+		@import 'portfolio/image-left';
 	}
 
 	// In-progress portfolio entries
@@ -54,7 +55,7 @@
 
 		// Layout styles
 
-		@import 'portfolio/in-progress/default';
+		@import 'portfolio/in-progress/text';
 		@import 'portfolio/in-progress/image-left';
 	}
 }
