@@ -1,11 +1,11 @@
 <div class="image-left">
 	<%=
-		render 'partials/portfolio/in-progress/shared/entry-image',
+		render $in_progress_layouts+'shared/entry-image',
 		:layout_config => @layout_config
 	%>
 
 	<%=
-		render 'partials/portfolio/in-progress/shared/entry-body',
+		render $in_progress_layouts+'shared/entry-body',
 		:layout_config => @layout_config
 	%>
 </div>

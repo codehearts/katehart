@@ -15,14 +15,14 @@ url: http://moodandfigure.com
 <% end %>
 
 <%=
-	render 'partials/portfolio/image-right',
+	render $portfolio_layouts+'image-right',
 	:layout_config => {
 		:primary_block => true,
 		:image_alt => 'Screenshot of the Mood &amp; Figure home page',
 		:images => [
 			{
-			'src'          => 'media/images/portfolio/mood-and-figure/home.png',
-			'high_src'     => 'media/images/portfolio/mood-and-figure/home@2x.png',
+			'src'      => $portfolio_images+'mood-and-figure/home.png',
+			'high_src' => $portfolio_images+'mood-and-figure/home@2x.png',
 			'is_default'   => true,
 			'serve_old_ie' => true,
 			}
@@ -35,14 +35,14 @@ url: http://moodandfigure.com
 <% end %>
 
 <%=
-	render 'partials/portfolio/image-left',
+	render $portfolio_layouts+'image-left',
 	:layout_config => {
 		:primary_block => true,
 		:image_alt => 'Screenshot of Mood &amp; Figure&rsquo;s color page',
 		:images => [
 			{
-			'src'          => 'media/images/portfolio/mood-and-figure/color.png',
-			'high_src'     => 'media/images/portfolio/mood-and-figure/color@2x.png',
+			'src'      => $portfolio_images+'mood-and-figure/color.png',
+			'high_src' => $portfolio_images+'mood-and-figure/color@2x.png',
 			'is_default'   => true,
 			'serve_old_ie' => true,
 			}
