@@ -1,18 +1,22 @@
-%tooltip {
-	$tip-size: 6px;
+/**
+ * The parent of a tooltip should be positioned relatively.
+ */
 
+$tip-size: 6px;
+
+%tooltip {
 	background: $accent-color;
-	margin-top: rhythm(1);
 	padding: 3px 10px 6px;
-	position: relative;
+	position: absolute;
+	top: rhythm(2);
 	text-transform: lowercase;
 	font-family: $sans-serif;
 	color: $accent-contrast-color;
+	width: 200px;
 	pointer-events: none;
 
 	// Tip
 	&::before {
-
 		content: '';
 		display: block;
 		position: absolute;
@@ -35,6 +39,30 @@
 			border-color: $accent-contrast-color;
 			border-top-color: transparent;
 			border-right-color: transparent;
+		}
+	}
+}
+
+%tooltip-top {
+	top: auto;
+	bottom: rhythm(1);
+
+	// Tip
+	&::before {
+		top: auto;
+		bottom: -$tip-size * 2;
+
+		border: $tip-size solid $accent-color;
+		border-bottom-color: transparent;
+		border-left-color: transparent;
+	}
+
+	.inverted & {
+		// Tip
+		&::before {
+			border-color: $accent-contrast-color;
+			border-bottom-color: transparent;
+			border-left-color: transparent;
 		}
 	}
 }

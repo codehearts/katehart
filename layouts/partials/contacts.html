@@ -1,6 +1,6 @@
 <h3 class="contacts-heading">Get in touch</h3>
 
-<ul class="contacts">
+<ul class="contacts <%= @classes %>">
 	<% ordered_contact_items(@contacts).each do |contact| %>
 	<li>
 		<a href="<%= contact[:url] %>" class="contact-link">

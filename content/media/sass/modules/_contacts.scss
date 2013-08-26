@@ -2,10 +2,10 @@
 	& > li {
 		margin-right: 1em;
 		display: inline-block;
+		position: relative;
 
 		&:hover {
 			.contact-info {
-				top: auto;
 				left: auto;
 			}
 		}
@@ -20,8 +20,11 @@
 	@extend %tooltip;
 
 	position: absolute;
-	top: -9999px;
 	left: -9999px;
+
+	.tooltips-top & {
+		@extend %tooltip-top;
+	}
 }
 
 .contact-desc {
