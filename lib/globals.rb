@@ -3,7 +3,7 @@
 $contacts = ['email', 'twitter', 'github']
 
 $images = 'media/images/'
-$portfolio_images = $images_dir + 'portfolio/'
+$portfolio_images = $images + 'portfolio/'
 
 $partial_layouts = 'partials/'
 $profile_layouts = $partial_layouts + 'profiles/'
