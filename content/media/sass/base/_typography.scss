@@ -2,9 +2,9 @@
 @import 'compass/typography/vertical_rhythm';
 
 $sans-serif: futura-pt, 'Futura PT', Futura, 'Avenir Next', Avenir, sans-serif;
-$serif: adobe-garamond-pro,  'Adobe Garamond Pro', Georgia, 'Times New Roman', Times, serif;
+$serif: adobe-garamond-pro, 'Adobe Garamond Pro', Georgia, 'Times New Roman', Times, serif;
 
-$base-font-size: 21px;
+$base-font-size:   21px;
 $base-line-height: 26px;
 $min-line-padding: 0;
 $h1-font-size: 48px;
@@ -87,7 +87,7 @@ a {
 	}
 
 	&:active {
-		@include translate(1px,1px);
+		@include translate(1px, 1px);
 	}
 
 	.inverted & {

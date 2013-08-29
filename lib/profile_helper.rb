@@ -38,7 +38,7 @@ module Profile
 	end
 
 	# Gets all profile items, or only those with the specified names in the specified order
-	def ordered_profile_items(profiles=nil)
+	def ordered_profile_items(profiles = nil)
 		# Cache known profiles
 		cache_profiles
 

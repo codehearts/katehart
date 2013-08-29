@@ -6,23 +6,23 @@ url_text: See my progress so far
 ---
 
 <% content_for :body do %>
-<p>In 2012 I was elected webmaster for the University of Rochester's Computer Interest Floor, a group of individuals who host seminars and provide tech support for the University community, alongside other technical offerings. I decided that CIF needed a new face for its online properties and began redesigning the site over the summer following my freshman year.</p>
+<p>In 2012 I was elected webmaster for the University of Rochester&rsquo;s Computer Interest Floor, a group of individuals who host seminars and provide tech support for the University community, alongside other technical offerings. I decided that CIF needed a new face for its online properties and began redesigning the site over the summer following my freshman year.</p>
 
-<p>The first step was creating a universal design for all of their sites. The design itself will be adaptive, fitting to whatever device it's displayed on. Their public site was moved to WordPress, which I tweaked to be more friendly to future editors who may not be very tech-savvy. After that, there's plenty of code from previous CIF members to refactor and prepare for the new design. Once everything's been updated to use the new design, I'll be considering new features and content to add while corresponding with CIF's tech officers.</p>
+<p>The first step was creating a universal design for all of their sites. The design itself will be adaptive, fitting to whatever device it&rsquo;s displayed on. Their public site was moved to WordPress, which I tweaked to be more friendly to future editors who may not be very tech-savvy. After that, there's plenty of code from previous CIF members to refactor and prepare for the new design. Once everything&rsquo;s been updated to use the new design, I&rsquo;ll be considering new features and content to add while corresponding with CIF&rsquo;s tech officers.</p>
 <% end %>
 
 <%=
-	render 'partials/portfolio/in-progress/image-left',
-	:layout_config => {
-		:primary_block => true,
-		:image_alt => 'Mockup of the CIF home page',
-		:images => [
-			{
-			'src'          => 'media/images/portfolio/cif/mockup.png',
-			'high_src'     => 'media/images/portfolio/cif/mockup@2x.png',
-			'is_default'   => true,
-			'serve_old_ie' => true,
-			}
-		]
-	}
+render 'partials/portfolio/in-progress/image-left',
+:layout_config => {
+	:primary_block => true,
+	:image_alt => 'Mockup of the CIF home page',
+	:images => [
+		{
+		'src'          => 'media/images/portfolio/cif/mockup.png',
+		'high_src'     => 'media/images/portfolio/cif/mockup@2x.png',
+		'is_default'   => true,
+		'serve_old_ie' => true,
+		},
+	],
+}
 %>

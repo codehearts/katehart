@@ -9,23 +9,23 @@ url: http://www.vonhanaboutlife.com/
 
 <p>About Life is a book that examines the philosophical questions the author faced as he escaped from Vietnam and adapted to life in the United States. I was approached by the author to create a promotional website for the book where he could continue to share his thoughts.</p>
 
-<p>The home page is an interactive version of the book’s cover that presents visitors with questions faced by the author and allows them to read excerpts from those parts of the book. There is also a blog where the author continues to write, as well as links for purchasing a copy of the book.</p>
+<p>The home page is an interactive version of the book&rsquo;s cover that presents visitors with questions faced by the author and allows them to read excerpts from those parts of the book. There is also a blog where the author continues to write, as well as links for purchasing a copy of the book.</p>
 <% end %>
 
 <%=
-	render $portfolio_layouts+'image-right',
-	:layout_config => {
-		:primary_block => true,
-		:image_alt => 'Screenshot of the About Life home page',
-		:images => [
-			{
-			'src'      => $portfolio_images+'about-life/home.png',
-			'high_src' => $portfolio_images+'about-life/home@2x.png',
-			'is_default'   => true,
-			'serve_old_ie' => true,
-			}
-		]
-	}
+render $portfolio_layouts+'image-right',
+:layout_config => {
+	:primary_block => true,
+	:image_alt => 'Screenshot of the About Life home page',
+	:images => [
+		{
+		'src'      => $portfolio_images+'about-life/home.png',
+		'high_src' => $portfolio_images+'about-life/home@2x.png',
+		'is_default'   => true,
+		'serve_old_ie' => true,
+		},
+	],
+}
 %>
 
 <% content_for :body do %>
@@ -33,16 +33,16 @@ url: http://www.vonhanaboutlife.com/
 <% end %>
 
 <%=
-	render $portfolio_layouts+'image-left',
-	:layout_config => {
-		:image_alt => 'Screenshot of the About Life blog',
-		:images => [
-			{
-			'src'      => $portfolio_images+'about-life/blog.png',
-			'high_src' => $portfolio_images+'about-life/blow@2x.png',
-			'is_default'   => true,
-			'serve_old_ie' => true,
-			}
-		]
-	}
+render $portfolio_layouts+'image-left',
+:layout_config => {
+	:image_alt => 'Screenshot of the About Life blog',
+	:images => [
+		{
+		'src'      => $portfolio_images+'about-life/blog.png',
+		'high_src' => $portfolio_images+'about-life/blow@2x.png',
+		'is_default'   => true,
+		'serve_old_ie' => true,
+		},
+	],
+}
 %>

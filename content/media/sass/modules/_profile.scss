@@ -1,5 +1,5 @@
 .profile-body {
-	@extend %span-7;
+	@include span(7);
 	@include push(2);
 	margin-bottom: rhythm(2);
 }
@@ -10,7 +10,7 @@
 	}
 
 	& > footer {
-		@extend %span-7;
+		@include span(7);
 		@include push(2);
 
 		& > h3 {

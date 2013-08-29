@@ -13,12 +13,15 @@
 #	item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #	because “*” matches zero or more characters.
 
+# Prevent loading Compass multiple times when using an automatic compiler
 unless defined? LOADED_DEFAULT_CONFIG
 	LOADED_DEFAULT_CONFIG = true
 
 	require 'compass'
 	Compass.add_project_configuration 'compass_config.rb' 
 end
+
+
 
 # Compile sass/style.scss with Compass
 compile '/media/sass/style/' do
@@ -30,6 +33,7 @@ compile '/media/*' do
 	nil
 end
 
+# General compilation
 compile '*' do
 	if item.binary?
 		# Don’t filter binary items
@@ -41,7 +45,7 @@ end
 
 
 
-# Move compiled style.scss to a css dir
+# Route compiled style.scss to a css dir
 route '/media/sass/style' do
 	'/media/css/style.css'
 end
@@ -51,7 +55,7 @@ route '/media/sass/*' do
 	nil
 end
 
-# Copy media files over as is
+# Route media files with their file extensions
 route '/media/*' do
 	item.identifier.chop + '.' + item[:extension]
 end
@@ -66,6 +70,7 @@ route '/portfolio/*' do
 	nil
 end
 
+# General routing
 route '*' do
 	if item.binary?
 		# Write item with identifier /foo/ to /foo.ext
@@ -75,5 +80,7 @@ route '*' do
 		item.identifier + 'index.html'
 	end
 end
+
+
 
 layout '*', :erb

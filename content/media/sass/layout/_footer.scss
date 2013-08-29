@@ -1,10 +1,9 @@
 #footer {
 	@extend .container;
-
 	@include downward-triangle-background($background-color);
 	background-color: $accent-color;
-    background-repeat: repeat-x;
 	background-position: top center;
+    background-repeat: repeat-x;
 	margin-top: rhythm(8);
 	padding-top: rhythm(2);
 	padding-bottom: rhythm(2);

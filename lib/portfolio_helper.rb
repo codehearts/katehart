@@ -1,11 +1,9 @@
 module Portfolio
 
-	# Content directory where portfolio entries are stored
-	@@portfolio_dir = '/portfolio/'
-	# Content subdirectory where in-progress portfolio entries are stored
+	# Content directories where portfolio entries are stored
+	@@portfolio_dir   = '/portfolio/'
 	@@in_progress_dir = @@portfolio_dir + 'in-progress/'
-	# Content subdirectory where scrapped portfolio entries are stored
-	@@scraps_dir = @@portfolio_dir + 'scraps/'
+	@@scraps_dir      = @@portfolio_dir + 'scraps/'
 	# Cache of known portfolio items
 	# Hash with keys 'all', 'completed', 'in-progress', and 'scraps'
 	@@known_portfolio_entries = nil
@@ -27,8 +25,8 @@ module Portfolio
 		end
 	end
 
-	# Gets all portfolio items of the given type sorted by their `date` value
-	# Valid types are 'all', 'completed', 'in-progress', and 'scraps'.
+	# Gets all portfolio items of the given type sorted by their `date` value.
+	# Valid type arguments are 'all', 'completed', 'in-progress', and 'scraps'.
 	def portfolio_items(type='completed')
 		# Cache known portfolio entries
 		cache_portfolio_entries

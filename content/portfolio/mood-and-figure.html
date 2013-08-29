@@ -15,19 +15,19 @@ url: http://moodandfigure.com
 <% end %>
 
 <%=
-	render $portfolio_layouts+'image-right',
-	:layout_config => {
-		:primary_block => true,
-		:image_alt => 'Screenshot of the Mood &amp; Figure home page',
-		:images => [
-			{
-			'src'      => $portfolio_images+'mood-and-figure/home.png',
-			'high_src' => $portfolio_images+'mood-and-figure/home@2x.png',
-			'is_default'   => true,
-			'serve_old_ie' => true,
-			}
-		]
-	}
+render $portfolio_layouts+'image-right',
+:layout_config => {
+	:primary_block => true,
+	:image_alt => 'Screenshot of the Mood &amp; Figure home page',
+	:images => [
+		{
+		'src'      => $portfolio_images+'mood-and-figure/home.png',
+		'high_src' => $portfolio_images+'mood-and-figure/home@2x.png',
+		'is_default'   => true,
+		'serve_old_ie' => true,
+		},
+	],
+}
 %>
 
 <% content_for :body do %>
@@ -35,18 +35,18 @@ url: http://moodandfigure.com
 <% end %>
 
 <%=
-	render $portfolio_layouts+'image-left',
-	:layout_config => {
-		:image_alt => 'Screenshot of Mood &amp; Figure&rsquo;s color page',
-		:images => [
-			{
-			'src'      => $portfolio_images+'mood-and-figure/color.png',
-			'high_src' => $portfolio_images+'mood-and-figure/color@2x.png',
-			'is_default'   => true,
-			'serve_old_ie' => true,
-			}
-		]
-	}
+render $portfolio_layouts+'image-left',
+:layout_config => {
+	:image_alt => 'Screenshot of Mood &amp; Figure&rsquo;s color page',
+	:images => [
+		{
+		'src'      => $portfolio_images+'mood-and-figure/color.png',
+		'high_src' => $portfolio_images+'mood-and-figure/color@2x.png',
+		'is_default'   => true,
+		'serve_old_ie' => true,
+		},
+	],
+}
 %>
 
 <% content_for :body do %>
@@ -54,26 +54,26 @@ url: http://moodandfigure.com
 <% end %>
 
 <%=
-	render $portfolio_layouts+'mobile',
-	:layout_config => {
-		:primary_block => true,
-		:portrait_alt => 'Screenshot of Mood &amp; Figure&rsquo;s mobile design in portrait orientation',
-		:portrait_images => [
-			{
-			'src'      => $portfolio_images+'mood-and-figure/mobile-portrait.png',
-			'high_src'      => $portfolio_images+'mood-and-figure/mobile-portrait@2x.png',
-			'is_default'   => true,
-			'serve_old_ie' => true,
-			}
-		],
-		:landscape_alt => 'Screenshot of Mood &amp; Figure&rsquo;s mobile design in landscapet orientation',
-		:landscape_images => [
-			{
-			'src'      => $portfolio_images+'mood-and-figure/mobile-landscape.png',
-			'high_src'      => $portfolio_images+'mood-and-figure/mobile-landscape@2x.png',
-			'is_default'   => true,
-			'serve_old_ie' => true,
-			}
-		],
-	}
+render $portfolio_layouts+'mobile',
+:layout_config => {
+	:primary_block => true,
+	:portrait_alt => 'Screenshot of Mood &amp; Figure&rsquo;s mobile design in portrait orientation',
+	:portrait_images => [
+		{
+		'src'      => $portfolio_images+'mood-and-figure/mobile-portrait.png',
+		'high_src' => $portfolio_images+'mood-and-figure/mobile-portrait@2x.png',
+		'is_default'   => true,
+		'serve_old_ie' => true,
+		},
+	],
+	:landscape_alt => 'Screenshot of Mood &amp; Figure&rsquo;s mobile design in landscape orientation',
+	:landscape_images => [
+		{
+		'src'      => $portfolio_images+'mood-and-figure/mobile-landscape.png',
+		'high_src' => $portfolio_images+'mood-and-figure/mobile-landscape@2x.png',
+		'is_default'   => true,
+		'serve_old_ie' => true,
+		},
+	],
+}
 %>

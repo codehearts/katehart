@@ -1,20 +1,21 @@
 <% if @layout_config[:primary_block] %>
-	<h2 class="entry-heading"><%= @item[:title] %></h2>
-	<h3 class="entry-date"><%= @item[:date] %></h3>
+<h2 class="entry-heading"><%= @item[:title] %></h2>
+<h3 class="entry-date"><%= @item[:date] %></h3>
 <% end %>
+
 <div class="entry-layout image-right">
 	<div class="entry-body">
 		<%= content_for(@item, :body) %>
 
 		<% if @layout_config[:primary_block] and @item[:url] %>
-			<a href="<%= @item[:url] %>" class="entry-link" target="_blank">
-				Visit Site
-			</a>
+		<a href="<%= @item[:url] %>" class="entry-link" target="_blank">
+			Visit Site
+		</a>
 		<% end %>
 	</div>
 
 	<%=
-		render $portfolio_layouts+'shared/entry-image',
-		:layout_config => @layout_config
+	render $portfolio_layouts+'shared/entry-image',
+	:layout_config => @layout_config
 	%>
 </div>

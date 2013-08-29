@@ -5,12 +5,12 @@
 <h1>I'm currently <em>working on</em> some things. <span class="heading-aside">You may be more interested in <a href="#work">work I've finished</a>.</span></h1>
 
 <ul class="portfolio-entries">
-<% entries.each do |entry| %>
+	<% entries.each do |entry| %>
 	<li>
 		<article class="portfolio-entry in-progress">
 			<%= entry.compiled_content %>
 		</article>
 	</li>
-<% end %>
+	<% end %>
 </ul>
 <% end %>

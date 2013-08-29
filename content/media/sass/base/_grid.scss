@@ -2,12 +2,6 @@ $grid-width: 1260;
 $grid-columns: 21;
 $grid-column-width: ($grid-width / $grid-columns) / $grid-width * 100%;
 
-@for $i from 1 through $grid-columns {
-	%span-#{$i} {
-		width: $grid-column-width * $i;
-	}
-}
-
 @mixin span($columns, $parent-size: $grid-columns) {
 	$column-width: ($grid-width / $parent-size) / $grid-width;
 	width: $column-width * $columns * 100%;

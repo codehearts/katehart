@@ -1,13 +1,13 @@
 # Require any additional compass plugins here.
 
 # Set this to the root of your project when deployed:
-http_path = "/"
-project_path = "."
-sass_dir = "content/media/sass"
-css_dir = "output/media/css"
-images_dir = "content/media/images"
+http_path    = '/'
+project_path = '.'
+sass_dir   = 'content/media/sass'
+css_dir    = 'output/media/css'
+images_dir = 'content/media/images'
 
-# Use SCSS
+# Use SCSS with Sass
 sass_options = {
   :syntax => :scss
 }
