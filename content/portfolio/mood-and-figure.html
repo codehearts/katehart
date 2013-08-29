@@ -37,12 +37,38 @@ url: http://moodandfigure.com
 <%=
 	render $portfolio_layouts+'image-left',
 	:layout_config => {
-		:primary_block => true,
 		:image_alt => 'Screenshot of Mood &amp; Figure&rsquo;s color page',
 		:images => [
 			{
 			'src'      => $portfolio_images+'mood-and-figure/color.png',
 			'high_src' => $portfolio_images+'mood-and-figure/color@2x.png',
+			'is_default'   => true,
+			'serve_old_ie' => true,
+			}
+		]
+	}
+%>
+
+<% content_for :body do %>
+<p>Mood &amp; Figure also features a remarkable mobile experience by gracefully adapting to smaller screen sizes. All images are loaded adaptively to prevent mobile visitors from downloading more data than necessary.</p>
+<% end %>
+
+<%=
+	render $portfolio_layouts+'mobile',
+	:layout_config => {
+		:primary_block => true,
+		:landscape_alt => 'Screenshot of Mood &amp; Figure&rsquo;s color page',
+		:landscape_images => [
+			{
+			'src'      => $portfolio_images+'mood-and-figure/mobile-landscape.png',
+			'is_default'   => true,
+			'serve_old_ie' => true,
+			}
+		],
+		:portrait_alt => 'Screenshot of Mood &amp; Figure&rsquo;s color page',
+		:portrait_images => [
+			{
+			'src'      => $portfolio_images+'mood-and-figure/mobile-portrait.png',
 			'is_default'   => true,
 			'serve_old_ie' => true,
 			}
