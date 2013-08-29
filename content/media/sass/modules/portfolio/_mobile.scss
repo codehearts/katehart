@@ -1,0 +1,34 @@
+.mobile {
+	position: relative;
+	overflow: hidden;
+
+	.entry-body {
+		@include span(7);
+		@include push(3);
+		margin-top: rhythm(2);
+		margin-bottom: rhythm(2);
+		float: left;
+	}
+
+	.mobile-portrait {
+		@include span(6);
+		@include push(13);
+		position: absolute;
+		bottom: 0;
+		float: right;
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	.mobile-landscape {
+		@include span(10);
+		@include push(2);
+		float: left;
+
+		img {
+			max-width: 100%;
+		}
+	}
+}

@@ -57,7 +57,15 @@ url: http://moodandfigure.com
 	render $portfolio_layouts+'mobile',
 	:layout_config => {
 		:primary_block => true,
-		:landscape_alt => 'Screenshot of Mood &amp; Figure&rsquo;s color page',
+		:portrait_alt => 'Screenshot of Mood &amp; Figure&rsquo;s mobile design in portrait orientation',
+		:portrait_images => [
+			{
+			'src'      => $portfolio_images+'mood-and-figure/mobile-portrait.png',
+			'is_default'   => true,
+			'serve_old_ie' => true,
+			}
+		],
+		:landscape_alt => 'Screenshot of Mood &amp; Figure&rsquo;s mobile design in landscapet orientation',
 		:landscape_images => [
 			{
 			'src'      => $portfolio_images+'mood-and-figure/mobile-landscape.png',
@@ -65,13 +73,5 @@ url: http://moodandfigure.com
 			'serve_old_ie' => true,
 			}
 		],
-		:portrait_alt => 'Screenshot of Mood &amp; Figure&rsquo;s color page',
-		:portrait_images => [
-			{
-			'src'      => $portfolio_images+'mood-and-figure/mobile-portrait.png',
-			'is_default'   => true,
-			'serve_old_ie' => true,
-			}
-		]
 	}
 %>
