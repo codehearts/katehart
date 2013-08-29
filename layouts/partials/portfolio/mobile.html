@@ -3,19 +3,21 @@
 		<%= content_for(@item, :body) %>
 	</div>
 
-	<div class="mobile-portrait">
-		<%=
-		render $partial_layouts+'image',
-		:images => @layout_config[:portrait_images],
-		:alt    => @layout_config[:portrait_alt]
-		%>
-	</div>
+	<div class="mobile-images">
+		<div class="mobile-portrait">
+			<%=
+			render $partial_layouts+'image',
+			:images => @layout_config[:portrait_images],
+			:alt    => @layout_config[:portrait_alt]
+			%>
+		</div>
 
-	<div class="mobile-landscape">
-		<%=
-		render $partial_layouts+'image',
-		:images => @layout_config[:landscape_images],
-		:alt    => @layout_config[:landscape_alt]
-		%>
+		<div class="mobile-landscape">
+			<%=
+			render $partial_layouts+'image',
+			:images => @layout_config[:landscape_images],
+			:alt    => @layout_config[:landscape_alt]
+			%>
+		</div>
 	</div>
 </div>

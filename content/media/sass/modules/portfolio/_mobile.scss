@@ -4,18 +4,21 @@
 
 	.entry-body {
 		@include span(7);
-		@include push(3);
+		@include push(2);
 		margin-top: rhythm(2);
-		margin-bottom: rhythm(2);
 		float: left;
 	}
 
+	.mobile-images {
+		@include span(11);
+		@include push(1);
+		float: left;
+		position: relative;
+		overflow: hidden;
+	}
+
 	.mobile-portrait {
-		@include span(6);
-		@include push(13);
-		position: absolute;
-		bottom: 0;
-		float: right;
+		max-width: 320px;
 
 		img {
 			max-width: 100%;
@@ -23,9 +26,10 @@
 	}
 
 	.mobile-landscape {
-		@include span(10);
-		@include push(2);
-		float: left;
+		@include push(4, 11);
+		position: absolute;
+		bottom: 0;
+		max-width: 480px;
 
 		img {
 			max-width: 100%;
