@@ -13,6 +13,7 @@
 #	item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #	because “*” matches zero or more characters.
 
+# TODO This should probably be moved to lib/default.rb
 # Prevent loading Compass multiple times when using an automatic compiler
 unless defined? LOADED_DEFAULT_CONFIG
 	LOADED_DEFAULT_CONFIG = true
@@ -28,7 +29,14 @@ compile '/media/sass/style/' do
 	filter :sass, Compass.sass_engine_options
 end
 
-# Don’t filter or layout media files
+# Run all images through a lossless image compressor
+compile '/media/images/*/' do
+	if item.binary?
+		filter :image_compressor, :pngout => false, :advpng => false, :optipng => false, :pngcrush => false, :nice => 10
+	end
+end
+
+# Don’t filter or layout other media files
 compile '/media/*' do
 	nil
 end
