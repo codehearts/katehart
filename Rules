@@ -13,17 +13,6 @@
 #	item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #	because “*” matches zero or more characters.
 
-# TODO This should probably be moved to lib/default.rb
-# Prevent loading Compass multiple times when using an automatic compiler
-unless defined? LOADED_DEFAULT_CONFIG
-	LOADED_DEFAULT_CONFIG = true
-
-	require 'compass'
-	Compass.add_project_configuration 'compass_config.rb' 
-end
-
-
-
 # Compile sass/style.scss with Compass
 compile '/media/sass/style/' do
 	filter :sass, Compass.sass_engine_options
