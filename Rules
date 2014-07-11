@@ -21,7 +21,7 @@ end
 # Run all images through a lossless image compressor
 compile '/media/images/*/' do
 	if item.binary?
-		filter :image_compressor, :pngout => false, :advpng => false, :optipng => false, :pngcrush => false, :nice => 10
+		filter :image_compressor, :pngout => false, :advpng => {:level => 1}, :optipng => {:level => 1}, :pngcrush => false
 	end
 end
 
