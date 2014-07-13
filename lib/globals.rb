@@ -2,6 +2,8 @@
 
 $contacts = ['email', 'twitter', 'github']
 
+$js_dir           = 'media/js/'
+$css_dir          = 'media/css/'
 $images           = 'media/images/'
 $portfolio_images = $images + 'portfolio/'
 
