@@ -1,7 +1,7 @@
 module Profile
 
 	# Content directory where profiles are stored
-	@@profiles_dir = '/data/profiles/'
+	@@profiles_dir = '/profiles/'
 	# Cache of known profile items
 	@@known_profiles = nil
 

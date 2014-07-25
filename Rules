@@ -58,7 +58,7 @@ route '/js/*' do
 end
 
 # Don't route data files
-route %r{^(contact_info|data)/\*$} do
+route %r{^/(contact_info|profiles)/.+/$} do
 	nil
 end
 
