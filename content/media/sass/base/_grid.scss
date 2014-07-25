@@ -12,7 +12,17 @@ $grid-column-width: ($grid-width / $grid-columns) / $grid-width * 100%;
 	margin-left: $column-width * $push-by * 100%;
 }
 
+@mixin rpush($push-by, $parent-size: $grid-columns) {
+	$column-width: ($grid-width / $parent-size) / $grid-width;
+	margin-right: $column-width * $push-by * 100%;
+}
+
 @mixin pull($pull-by, $parent-size: $grid-columns) {
 	$column-width: ($grid-width / $parent-size) / $grid-width;
 	margin-left: -$column-width * $pull-by * 100%;
+}
+
+@mixin rpull($pull-by, $parent-size: $grid-columns) {
+	$column-width: ($grid-width / $parent-size) / $grid-width;
+	margin-right: -$column-width * $pull-by * 100%;
 }

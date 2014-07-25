@@ -7,7 +7,7 @@
 
 .profile-image {
 	@include span(11);
-	@include push(1);
+	@include rpush(1);
 	margin-top: rhythm(-5);
 	position: relative; // Necessary for the color overlay
 	float: right;
