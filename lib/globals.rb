@@ -5,6 +5,7 @@ $contacts = ['email', 'twitter', 'github']
 $js_dir           = 'media/js/'
 $css_dir          = 'media/css/'
 $images           = 'media/images/'
+$profile_images   = $images + 'profile/'
 $portfolio_images = $images + 'portfolio/'
 
 $partial_layouts     = 'partials/'

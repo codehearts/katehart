@@ -2,6 +2,20 @@
 	@include span(7);
 	@include push(2);
 	margin-bottom: rhythm(2);
+	float: left;
+}
+
+.profile-image {
+	@include span(11);
+	@include push(1);
+	margin-top: rhythm(-6);
+	float: right;
+
+	& > img {
+		@include span(6, 11);
+		@include push(1, 11);
+		border-radius: 50%;
+	}
 }
 
 .profile {
@@ -12,9 +26,19 @@
 	& > footer {
 		@include span(7);
 		@include push(2);
+		float: left;
 
 		& > h3 {
 			@include pull(1, 7)
 		}
 	}
+
+	// Apply a clearfix for the floats
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+    *zoom: 1; // Necessary to clearfix older IE
 }
