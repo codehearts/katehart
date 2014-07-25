@@ -14,19 +14,19 @@
 #	because “*” matches zero or more characters.
 
 # Compile sass/style.scss with Compass
-compile '/media/sass/style/' do
+compile '/sass/style/' do
 	filter :sass, Compass.sass_engine_options
 end
 
 # Run all images through a lossless image compressor
-compile '/media/images/*/' do
+compile '/images/*/' do
 	if item.binary?
 		filter :image_compressor, :pngout => false, :advpng => {:level => 1}, :optipng => {:level => 1}, :pngcrush => false
 	end
 end
 
 # Don’t filter or layout other media files
-compile '/media/*' do
+compile '/js/*' do
 	nil
 end
 
@@ -43,17 +43,17 @@ end
 
 
 # Route compiled style.scss to a css dir
-route '/media/sass/style' do
-	'/media/css/style.css'
+route '/sass/style' do
+	'/css/style.css'
 end
 
 # Don't route other sass files
-route '/media/sass/*' do
+route '/sass/*' do
 	nil
 end
 
 # Route media files with their file extensions
-route '/media/*' do
+route '/js/*' do
 	item.identifier.chop + '.' + item[:extension]
 end
 
