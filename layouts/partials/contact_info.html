@@ -1,13 +1,13 @@
-<h3 class="contacts-heading">Get in touch</h3>
+<h3 class="contact-info-heading">Get in touch</h3>
 
-<ul class="contacts <%= @classes %>">
-	<% ordered_contact_items(@contacts).each do |contact| %>
+<ul class="contact-info <%= @classes %>">
+	<% ordered_contact_info_items(@contact_info).each do |contact| %>
 	<li>
 		<a href="<%= contact[:url] %>" class="contact-link">
 			<%= contact[:medium] %>
 		</a>
 
-		<p class="contact-info">
+		<p class="contact-data">
 			<%= contact[:name] %>
 
 			<span class="contact-desc">

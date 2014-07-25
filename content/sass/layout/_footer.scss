@@ -17,12 +17,12 @@
 	@include span(19);
 	@include push(1);
 
-	.contacts-heading {
+	.contact-info-heading {
 		margin: 0;
 		float: left;
 	}
 
-	.contacts {
+	.contact-info {
 		margin: 0 0 0 1em;
 		float: left;
 	}

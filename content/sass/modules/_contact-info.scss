@@ -1,11 +1,11 @@
-.contacts {
+.contact-info {
 	& > li {
 		margin-right: 1em;
 		display: inline-block;
 		position: relative;
 
 		&:hover {
-			.contact-info {
+			.contact-data {
 				left: auto;
 			}
 		}
@@ -16,7 +16,7 @@
 	@include adjust-font-size-to($h3-font-size);
 }
 
-.contact-info {
+.contact-data {
 	@extend %tooltip;
 
 	position: absolute;

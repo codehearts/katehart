@@ -1,10 +1,10 @@
 # Global site configuration variables
 
-$contacts = ['email', 'twitter', 'github']
+$contact_info = ['email', 'twitter', 'github']
 
-$js_dir           = 'media/js/'
-$css_dir          = 'media/css/'
-$images           = 'media/images/'
+$js_dir           = 'js/'
+$css_dir          = 'css/'
+$images           = 'images/'
 $profile_images   = $images + 'profile/'
 $portfolio_images = $images + 'portfolio/'
 
