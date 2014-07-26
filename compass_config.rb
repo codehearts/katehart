@@ -3,9 +3,9 @@
 # Set this to the root of your project when deployed:
 http_path    = '/'
 project_path = '.'
-sass_dir   = 'content/media/sass'
-css_dir    = 'output/media/css'
-images_dir = 'content/media/images'
+sass_dir   = 'content/sass'
+css_dir    = 'output/css'
+images_dir = 'content/images'
 
 # Use SCSS with Sass
 sass_options = {

@@ -13,9 +13,9 @@
 	float: right;
 
 	// Triangular clipping mask
-	$clipping-mask: 'data:image/svg+xml;utf8,<svg height="0" xmlns="http://www.w3.org/2000/svg" version="1.1"><g><clipPath id="c1" clipPathUnits="objectBoundingBox"><polygon points="0,1 0.25,0 1,0.75" /></clipPath></g></svg>#c1';
-	-webkit-clip-path: url($clipping-mask);
-	clip-path: url($clipping-mask);
+	$clipping-path: url('../images/svg/profile-image-triangle.svg#clipping');
+	-webkit-clip-path: $clipping-path;
+	clip-path: $clipping-path;
 
 	& > img {
 		display: block; // Removes whitespace around image
