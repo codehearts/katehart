@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'nanoc'
-gem 'adsf', :require => false
+#gem 'adsf'
 gem 'compass'
-gem 'guard-nanoc', :require => false
+#gem 'guard-nanoc'
 gem 'nanoc-image-compressor'
-gem 'mina', :require => false
+#gem 'mina'
