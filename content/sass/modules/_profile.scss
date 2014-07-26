@@ -13,9 +13,11 @@
 	float: right;
 
 	// Triangular clipping mask
-	$clipping-path: url('../images/svg/profile-image-triangle.svg#clipping');
-	-webkit-clip-path: $clipping-path;
-	clip-path: $clipping-path;
+	$clipping-svg: 'data:image/svg+xml;utf8,<svg height="0" xmlns="http://www.w3.org/2000/svg" version="1.1"><clipPath id="c1" clipPathUnits="objectBoundingBox"><polygon points="0,1 0.25,0 1,0.75" /></clipPath></svg>#c1';
+	$clipping-polygon: polygon(0 100%, 25% 0, 100% 75%);
+	-webkit-clip-path: $clipping-polygon;
+	clip-path: url($clipping-svg);
+	clip-path: $clipping-polygon;
 
 	& > img {
 		display: block; // Removes whitespace around image
