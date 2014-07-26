@@ -44,6 +44,7 @@
 		@include span(7);
 		@include push(2);
 		float: left;
+		clear: left;
 
 		& > h3 {
 			@include pull(1, 7)
