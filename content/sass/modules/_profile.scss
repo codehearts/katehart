@@ -18,6 +18,7 @@
 	clip-path: url($clipping-mask);
 
 	& > img {
+		display: block; // Removes whitespace around image
 		max-width: 100%;
 	}
 
