@@ -18,9 +18,16 @@ compile '/sass/style/' do
 	filter :sass, Compass.sass_engine_options
 end
 
+compile '/images/portfolio/*/', :rep => :size_680 do
+	if item.binary?
+		filter :image_resizer, :width => 680
+		filter :image_compressor, :pngout => false, :advpng => {:level => 1}, :optipng => {:level => 1}, :pngcrush => false
+	end
+end
+
 # Run all images through a lossless image compressor
 compile '/images/*/' do
-	if item.binary? and item[:extension] != 'svg'
+	if item.binary?
 		filter :image_compressor, :pngout => false, :advpng => {:level => 1}, :optipng => {:level => 1}, :pngcrush => false
 	end
 end
@@ -65,6 +72,10 @@ end
 # Don't route portfolio items
 route '/portfolio/*' do
 	nil
+end
+
+route '/images/portfolio/*/', :rep => :size_680 do
+	item.identifier.chop + '-680.' + item[:extension]
 end
 
 # General routing

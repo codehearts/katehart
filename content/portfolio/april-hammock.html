@@ -15,17 +15,9 @@ url: http://aprilhammockstudio.com/
 <% end %>
 
 <%=
-render $portfolio_layouts+'image-right',
-:layout_config => {
-	:primary_block => true,
-	:image_alt => 'Screenshot of the April Hammock home page',
-	:images => [
-		{
-		'src'      => $portfolio_images+'april-hammock/home.png',
-		'high_src' => $portfolio_images+'april-hammock/home@2x.png',
-		'is_default'   => true,
-		'serve_old_ie' => true,
-		},
-	],
-}
+render $portfolio_layouts+'entry',
+:template => 'image-right',
+:image => 'april-hammock/home',
+:image_alt => 'Screenshot of the April Hammock home page',
+:primary_block => true
 %>

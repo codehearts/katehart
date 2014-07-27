@@ -2,16 +2,17 @@
 
 <%# Only display this section if there are entries present %>
 <% if entries.length != 0 %>
-<h1 id="work">This is <em>my work</em>.</h1>
 
-<ul class="portfolio-entries">
-	<% entries.each do |entry| %>
-	<li>
-		<article class="portfolio-entry completed">
-			<%= entry.compiled_content %>
-		</article>
-	</li>
-	<% end %>
-</ul>
+	<h1 id="work">This is <em>my work</em>.</h1>
+
+	<ul class="portfolio-entries">
+		<% entries.each do |entry| %>
+			<li>
+				<article class="portfolio-entry completed">
+					<%= entry.compiled_content %>
+				</article>
+			</li>
+		<% end %>
+	</ul>
+
 <% end %>
-

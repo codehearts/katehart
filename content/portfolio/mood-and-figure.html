@@ -15,38 +15,24 @@ url: http://moodandfigure.com
 <% end %>
 
 <%=
-render $portfolio_layouts+'image-right',
-:layout_config => {
-	:primary_block => true,
-	:image_alt => 'Screenshot of the Mood &amp; Figure home page',
-	:images => [
-		{
-		'src'      => $portfolio_images+'mood-and-figure/home.png',
-		'high_src' => $portfolio_images+'mood-and-figure/home@2x.png',
-		'is_default'   => true,
-		'serve_old_ie' => true,
-		},
-	],
-}
+render $portfolio_layouts+'entry',
+:template => 'image-right',
+:image => 'mood-and-figure/home',
+:image_alt => 'Screenshot of the Mood &amp; Figure home page',
+:primary_block => true
 %>
+
+
 
 <% content_for :body do %>
 <p>The color archive provides an overview of the accent colors extracted from each post on the site. I plan on adding more interesting color-based functionality in the future.</p>
 <% end %>
 
 <%=
-render $portfolio_layouts+'image-left',
-:layout_config => {
-	:image_alt => 'Screenshot of Mood &amp; Figure&rsquo;s color page',
-	:images => [
-		{
-		'src'      => $portfolio_images+'mood-and-figure/color.png',
-		'high_src' => $portfolio_images+'mood-and-figure/color@2x.png',
-		'is_default'   => true,
-		'serve_old_ie' => true,
-		},
-	],
-}
+render $portfolio_layouts+'entry',
+:template => 'image-left',
+:image => 'mood-and-figure/color',
+:image_alt => 'Screenshot of Mood &amp; Figure&rsquo;s color page'
 %>
 
 <% content_for :body do %>

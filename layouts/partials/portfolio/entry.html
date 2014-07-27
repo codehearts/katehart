@@ -1,0 +1,19 @@
+<%=
+render $portfolio_layouts+@template,
+:layout_config => {
+	:primary_block => @primary_block,
+	:image_alt => @image_alt,
+	:images => [
+		{
+		'src'      => $portfolio_images+@image+'.png',
+		'is_default'   => true,
+		'serve_old_ie' => true,
+		},
+		{
+		'src'      => $portfolio_images+@image+'-680.png',
+		'high_src' => $portfolio_images+@image+'.png',
+		'query'    => '(max-width: 1325px)',
+		},
+	],
+}
+%>

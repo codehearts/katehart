@@ -13,36 +13,22 @@ url: http://www.vonhanaboutlife.com/
 <% end %>
 
 <%=
-render $portfolio_layouts+'image-right',
-:layout_config => {
-	:primary_block => true,
-	:image_alt => 'Screenshot of the About Life home page',
-	:images => [
-		{
-		'src'      => $portfolio_images+'about-life/home.png',
-		'high_src' => $portfolio_images+'about-life/home@2x.png',
-		'is_default'   => true,
-		'serve_old_ie' => true,
-		},
-	],
-}
+render $portfolio_layouts+'entry',
+:template => 'image-right',
+:image => 'about-life/home',
+:image_alt => 'Screenshot of the About Life home page',
+:primary_block => true
 %>
+
+
 
 <% content_for :body do %>
 <p>The blog takes on a visually lighter design, while retaining the home page&rsquo;s dark header, which is based on the book&rsquo;s cover.</p>
 <% end %>
 
 <%=
-render $portfolio_layouts+'image-left',
-:layout_config => {
-	:image_alt => 'Screenshot of the About Life blog',
-	:images => [
-		{
-		'src'      => $portfolio_images+'about-life/blog.png',
-		'high_src' => $portfolio_images+'about-life/blow@2x.png',
-		'is_default'   => true,
-		'serve_old_ie' => true,
-		},
-	],
-}
+render $portfolio_layouts+'entry',
+:template => 'image-left',
+:image => 'about-life/blog',
+:image_alt => 'Screenshot of the About Life blog'
 %>
