@@ -1,0 +1,9 @@
+$base-font-size:   18px;
+$base-line-height: 24px;
+$min-line-padding: 0;
+$h1-font-size: 48px;
+$h2-font-size: 36px;
+$h3-font-size: 24px;
+$h4-font-size: 18px;
+
+@include establish-baseline;

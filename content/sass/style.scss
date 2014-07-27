@@ -13,3 +13,7 @@
 @import 'modules/profile';
 @import 'modules/contact-info';
 @import 'modules/portfolio-entry';
+
+@media all and (max-width: 1280px) {
+	@import '1280/base/typography';
+}
