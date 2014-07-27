@@ -34,7 +34,8 @@ end
 
 # Don’t filter or layout other media files
 compile '/js/*' do
-	nil
+	filter :erb
+	filter :uglify_js if File.basename(item[:content_filename], ".*") == 'scripts'
 end
 
 # General compilation
@@ -59,9 +60,9 @@ route '/sass/*' do
 	nil
 end
 
-# Route media files with their file extensions
+# Only route the concatenated and minified scripts.js file
 route '/js/*' do
-	item.identifier.chop + '.' + item[:extension]
+	item.identifier.chop + '.' + item[:extension] if File.basename(item[:content_filename], ".*") == 'scripts'
 end
 
 # Don't route data files
