@@ -18,10 +18,27 @@ compile '/sass/style/' do
 	filter :sass, Compass.sass_engine_options
 end
 
-compile '/images/portfolio/*/', :rep => :size_680 do
+compile '/images/portfolio/*/', :rep => :size_960 do
 	if item.binary?
-		filter :image_resizer, :width => 680
-		filter :image_compressor, :pngout => false, :advpng => {:level => 1}, :optipng => {:level => 1}, :pngcrush => false
+		filter :image_resizer, :width => 960
+	end
+end
+
+compile '/images/portfolio/*/', :rep => :size_640 do
+	if item.binary?
+		filter :image_resizer, :width => 640
+	end
+end
+
+compile '/images/portfolio/*/', :rep => :size_480 do
+	if item.binary?
+		filter :image_resizer, :width => 480
+	end
+end
+
+compile '/images/portfolio/*/', :rep => :size_320 do
+	if item.binary?
+		filter :image_resizer, :width => 320
 	end
 end
 
@@ -75,8 +92,20 @@ route '/portfolio/*' do
 	nil
 end
 
-route '/images/portfolio/*/', :rep => :size_680 do
-	item.identifier.chop + '-680.' + item[:extension]
+route '/images/portfolio/*/', :rep => :size_960 do
+	item.identifier.chop + '-960.' + item[:extension]
+end
+
+route '/images/portfolio/*/', :rep => :size_640 do
+	item.identifier.chop + '-640.' + item[:extension]
+end
+
+route '/images/portfolio/*/', :rep => :size_480 do
+	item.identifier.chop + '-480.' + item[:extension]
+end
+
+route '/images/portfolio/*/', :rep => :size_320 do
+	item.identifier.chop + '-320.' + item[:extension]
 end
 
 # General routing

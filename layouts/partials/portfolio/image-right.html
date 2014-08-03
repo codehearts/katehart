@@ -4,6 +4,11 @@
 <% end %>
 
 <div class="entry-layout image-right">
+	<%=
+	render $portfolio_layouts+'shared/entry-image',
+	:layout_config => @layout_config
+	%>
+
 	<div class="entry-body">
 		<%= content_for(@item, :body) %>
 
@@ -14,8 +19,4 @@
 		<% end %>
 	</div>
 
-	<%=
-	render $portfolio_layouts+'shared/entry-image',
-	:layout_config => @layout_config
-	%>
 </div>

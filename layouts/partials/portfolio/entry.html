@@ -5,14 +5,25 @@ render $portfolio_layouts+@template,
 	:image_alt => @image_alt,
 	:images => [
 		{
-		'src'      => $portfolio_images+@image+'.png',
+		'src'      => $portfolio_images+@image+'-960.png',
+		'high_src' => $portfolio_images+@image+'.png',
 		'is_default'   => true,
 		'serve_old_ie' => true,
 		},
 		{
-		'src'      => $portfolio_images+@image+'-680.png',
-		'high_src' => $portfolio_images+@image+'.png',
-		'query'    => '(max-width: 1325px)',
+		'src'      => $portfolio_images+@image+'-640.png',
+		'high_src' => $portfolio_images+@image+'-960.png',
+		'query'    => '(max-width: 1600px)',
+		},
+		{
+		'src'      => $portfolio_images+@image+'-480.png',
+		'high_src' => $portfolio_images+@image+'-640.png',
+		'query'    => '(max-width: 1280px)',
+		},
+		{
+		'src'      => $portfolio_images+@image+'-320.png',
+		'high_src' => $portfolio_images+@image+'-480.png',
+		'query'    => '(max-width: 1000px)',
 		},
 	],
 }

@@ -2,18 +2,46 @@
 	overflow: hidden;
 
 	.entry-body {
-		@include span(7);
+		/*@include span(7);*/
 		@include push(2);
-		float: left;
+		/*float: left;*/
+		overflow: hidden; // Prevents text from spilling out under the entry-image
 	}
 
 	.entry-image {
-		@include span(11);
+		/*@include span(11);*/
 		@include push(1);
-		float: left;
+		float: right;
+		transition: width 0.5s, margin-right 0.5s;
+		width: 960px;
 
 		img {
 			max-width: 100%;
+		}
+	}
+}
+
+@media all and (max-width: 1600px) {
+	.image-right {
+		.entry-image {
+			@include rpush(1);
+			width: 640px;
+		}
+	}
+}
+
+@media all and (max-width: 1280px) {
+	.image-right {
+		.entry-image {
+			width: 480px;
+		}
+	}
+}
+
+@media all and (max-width: 1000px) {
+	.image-right {
+		.entry-image {
+			width: 320px;
 		}
 	}
 }
