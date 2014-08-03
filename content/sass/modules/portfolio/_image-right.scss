@@ -3,7 +3,7 @@
 
 	.entry-body {
 		/*@include span(7);*/
-		@include push(2);
+		@include pad(2);
 		/*float: left;*/
 		overflow: hidden; // Prevents text from spilling out under the entry-image
 	}
