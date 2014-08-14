@@ -36,12 +36,6 @@ compile '/images/portfolio/*/', :rep => :size_480 do
 	end
 end
 
-compile '/images/portfolio/*/', :rep => :size_320 do
-	if item.binary?
-		filter :image_resizer, :width => 320
-	end
-end
-
 # Run all images through a lossless image compressor
 compile '/images/*/' do
 	if item.binary?
@@ -102,10 +96,6 @@ end
 
 route '/images/portfolio/*/', :rep => :size_480 do
 	item.identifier.chop + '-480.' + item[:extension]
-end
-
-route '/images/portfolio/*/', :rep => :size_320 do
-	item.identifier.chop + '-320.' + item[:extension]
 end
 
 # General routing
