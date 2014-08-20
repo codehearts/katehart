@@ -1,6 +1,6 @@
-@mixin downward-triangle-background($color) {
+@mixin downward-triangle-background($color, $height: 13) {
 	// Convert the color to RGB for safe use in embedded SVG
 	$rgb: 'rgb(#{red($color)},#{green($color)},#{blue($color)})';
 
-	background-image: url('data:image/svg+xml;utf8,<svg width="26" height="13" xmlns="http://www.w3.org/2000/svg" version="1.1"><polygon fill="#{$rgb}" points="0,0 13,13 26,0" /></svg>');
+	background-image: url('data:image/svg+xml;utf8,<svg width="26" height="#{$height}" xmlns="http://www.w3.org/2000/svg" version="1.1"><polygon fill="#{$rgb}" points="0,0 13,#{$height} 26,0" /></svg>');
 }
