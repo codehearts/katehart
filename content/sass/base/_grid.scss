@@ -17,6 +17,11 @@ $grid-column-width: ($grid-width / $grid-columns) / $grid-width * 100%;
 	padding-left: $column-width * $pad-by * 100%;
 }
 
+@mixin rpad($pad-by, $parent-size: $grid-columns) {
+	$column-width: ($grid-width / $parent-size) / $grid-width;
+	padding-right: $column-width * $pad-by * 100%;
+}
+
 @mixin rpush($push-by, $parent-size: $grid-columns) {
 	$column-width: ($grid-width / $parent-size) / $grid-width;
 	margin-right: $column-width * $push-by * 100%;
