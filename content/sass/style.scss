@@ -1,3 +1,6 @@
+@import 'compass/css3/columns';
+@import 'compass/css3/hyphenation';
+
 @import 'compass/reset';
 
 @import 'mixins/downward-triangle-background';
@@ -14,6 +17,16 @@
 @import 'modules/contact-info';
 @import 'modules/portfolio-entry';
 
+@media all and (max-width: 1600px) {
+	@import '1600/modules/portfolio-entry';
+}
+
 @media all and (max-width: 1280px) {
-	@import '1280/base/typography';
+	/*@import '1280/base/typography';*/
+
+	@import '1280/modules/portfolio-entry';
+}
+
+@media all and (max-width: 760px) {
+	@import '760/modules/portfolio-entry';
 }

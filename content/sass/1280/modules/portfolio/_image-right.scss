@@ -1,0 +1,23 @@
+.image-right {
+	.entry-body {
+		@include span(18);
+		@include column-count(2);
+		@include hyphens(auto);
+	}
+
+	.entry-image {
+		background: $background-color top center repeat;
+		@include downward-triangle-background($light-background-color, $height: 19.5);
+
+		@include span(18);
+		@include push(2);
+		@include margin-trailer(1);
+		padding: 0;
+		float: left;
+
+		img {
+			margin: 0 auto;
+			width: 640px;
+		}
+	}
+}

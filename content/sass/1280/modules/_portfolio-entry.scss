@@ -1,0 +1,7 @@
+.portfolio-entry {
+	// Completed portfolio entries
+	&.completed {
+		@import 'portfolio/image-right';
+		@import 'portfolio/image-left';
+	}
+}

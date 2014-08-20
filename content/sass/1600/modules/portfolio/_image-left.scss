@@ -1,0 +1,10 @@
+.image-left {
+	.entry-body {
+		@include rpad(1);
+	}
+
+	.entry-image {
+		@include pad(2);
+		width: 640px;
+	}
+}
