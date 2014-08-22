@@ -1,7 +1,7 @@
 %image-right {
 	@include push(1);
 
-	transition: width 0.5s, padding-right 0.5s;
+	transition: width 0.5s, margin 0.5s;
 
 	float: right;
 	width: 960px;
