@@ -1,0 +1,18 @@
+%image-right {
+	@include push(1);
+
+	transition: width 0.5s, padding-right 0.5s;
+
+	float: right;
+	width: 960px;
+
+	img {
+		display: block; // Removes whitespace around image
+		max-width: 100%;
+	}
+}
+
+%image-right-body {
+	@include push(2);
+	overflow: hidden; // Prevents text from spilling out under the entry-image
+}

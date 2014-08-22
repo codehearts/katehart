@@ -1,6 +1,5 @@
 .image-right {
 	.entry-image {
-		@include rpad(1);
-		width: 640px;
+		@extend %image-right-1600;
 	}
 }

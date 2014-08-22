@@ -1,20 +1,11 @@
 .image-right {
 	overflow: hidden;
 
-	.entry-body {
-		@include pad(2);
-		overflow: hidden; // Prevents text from spilling out under the entry-image
+	& > .entry-body {
+		@extend %image-right-body;
 	}
 
-	.entry-image {
-		@include pad(1);
-		float: right;
-		transition: width 0.5s, padding-right 0.5s;
-		width: 960px;
-
-		img {
-			display: block;
-			max-width: 100%;
-		}
+	& > .entry-image {
+		@extend %image-right;
 	}
 }

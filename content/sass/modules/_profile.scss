@@ -1,16 +1,11 @@
 .profile-body {
-	@include span(7);
-	@include push(2);
-	margin-bottom: rhythm(2);
-	float: left;
+	@extend %image-right-body;
 }
 
 .profile-image {
-	@include span(11);
-	@include rpush(1);
+	@extend %image-right;
 	margin-top: rhythm(-5);
 	position: relative; // Necessary for the color overlay
-	float: right;
 
 	// Triangular clipping mask
 	$clipping-svg: 'data:image/svg+xml;utf8,<svg height="0" xmlns="http://www.w3.org/2000/svg" version="1.1"><clipPath id="c1" clipPathUnits="objectBoundingBox"><polygon points="0,1 0.25,0 1,0.75" /></clipPath></svg>#c1';
@@ -19,16 +14,13 @@
 	clip-path: url($clipping-svg);
 	clip-path: $clipping-polygon;
 
-	& > img {
-		display: block; // Removes whitespace around image
-		max-width: 100%;
-	}
-
 	// Accent color overlay
 	&:after {
 		background-color: rgba(red($accent-color), green($accent-color), blue($accent-color), 0.5);
-		pointer-events: none; // Don't let this element block clicks
 		content: '';
+
+		pointer-events: none; // Don't let this element block clicks
+
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -43,10 +35,8 @@
 	}
 
 	& > footer {
-		@include span(7);
-		@include push(2);
+		@include pad(2);
 		float: left;
-		clear: left;
 
 		& > h3 {
 			@include pull(1, 7)

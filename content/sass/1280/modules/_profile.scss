@@ -1,0 +1,10 @@
+.profile-image {
+	@extend %image-right-1280;
+	margin: rhythm(-3) auto rhythm(1);
+	display: table;
+	width: auto;
+}
+
+.profile-body {
+	@extend %image-right-body-1280;
+}

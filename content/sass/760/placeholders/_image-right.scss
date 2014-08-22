@@ -1,0 +1,9 @@
+%image-right-760 {
+	img {
+		width: 480px;
+	}
+}
+
+%image-right-body-760 {
+	@include column-count(1);
+}
