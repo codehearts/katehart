@@ -75,7 +75,7 @@ p, ol, ul, blockquote {
 	margin-bottom: rhythm(1);
 
 	// Don't break inside text columns
-	@include column-break-inside(avoid);
+	@include break-inside(avoid);
 	page-break-inside: avoid;
 }
 
