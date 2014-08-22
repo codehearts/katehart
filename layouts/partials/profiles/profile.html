@@ -3,13 +3,13 @@
 <article class="profile">
 	<h1><%= profile[:heading] %></h1>
 
+	<figure class="profile-image">
+		<img src="<%= $profile_images+profile[:image] %>" alt="Photo of <%= profile[:heading] %>" />
+	</figure>
+
 	<div class="profile-body">
 		<%= profile.raw_content %>
 	</div>
-
-	<figure class="profile-image">
-		<img src="<%= $profile_images+profile[:image] %>" alt="Picture of <%= profile[:heading] %>" />
-	</figure>
 
 	<footer>
 		<%= content_for(@item, :profile_footer) %>
