@@ -1,11 +1,9 @@
 .image-left {
 	.entry-body {
-		@include column-count(1);
+		@extend %image-left-body-760;
 	}
 
 	.entry-image {
-		img {
-			width: 480px;
-		}
+		@extend %image-left-760;
 	}
 }

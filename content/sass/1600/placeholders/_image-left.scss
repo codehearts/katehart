@@ -1,0 +1,10 @@
+%image-left-1600 {
+	@extend %image-right-1600;
+
+	@include rpush(0);
+	@include pad(0);
+}
+
+%image-left-body-1600 {
+	@include rpad(1);
+}

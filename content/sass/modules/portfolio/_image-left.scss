@@ -2,20 +2,10 @@
 	overflow: hidden;
 
 	.entry-body {
-		@include margin-leader(2);
-		@include pad(1);
-		overflow: hidden; // Prevents text from spilling out under the entry-image
+		@extend %image-left-body;
 	}
 
 	.entry-image {
-		@include pad(2);
-		float: left;
-		transition: width 0.5s, padding-left 0.5s;
-		width: 960;
-
-		img {
-			display: block;
-			max-width: 100%;
-		}
+		@extend %image-left;
 	}
 }

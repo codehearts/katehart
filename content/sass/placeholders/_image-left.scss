@@ -1,0 +1,14 @@
+%image-left {
+	@extend %image-right;
+
+	@include push(2);
+
+	float: left;
+}
+
+%image-left-body {
+	@extend %image-right-body;
+
+	@include pad(1);
+	@include push(0);
+}

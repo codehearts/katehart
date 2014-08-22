@@ -1,0 +1,9 @@
+%image-left-1280 {
+	@extend %image-right-1280;
+}
+
+%image-left-body-1280 {
+	@extend %image-right-body-1280;
+
+	@include pad(2);
+}
