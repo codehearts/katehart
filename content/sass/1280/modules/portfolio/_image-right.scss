@@ -6,7 +6,8 @@
 	.entry-image {
 		@extend %image-right-1280;
 
-		background: $background-color top center repeat;
-		@include downward-triangle-background($light-background-color, $height: 19.5);
+		background: $light-background-color top center repeat;
+		@include downward-triangle-background($background-color, $height: 19);
+		background-size: 1.5em;
 	}
 }
