@@ -2,7 +2,7 @@
  * The parent of a tooltip should be positioned relatively.
  */
 
-$tip-size: 6px;
+$tip-size: 7px;
 
 %tooltip {
 	background: $accent-color;
@@ -12,7 +12,7 @@ $tip-size: 6px;
 	text-transform: lowercase;
 	font-family: $sans-serif;
 	color: $accent-contrast-color;
-	width: 200px;
+	width: 250px;
 	pointer-events: none;
 
 	// Tip

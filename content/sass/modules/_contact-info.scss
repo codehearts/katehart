@@ -6,7 +6,10 @@
 
 		&:hover {
 			.contact-data {
-				left: auto;
+				transform: translateY(0);
+				opacity: 1;
+				left: 0;
+				right: auto;
 			}
 		}
 	}
@@ -19,7 +22,10 @@
 .contact-data {
 	@extend %tooltip;
 
-	position: absolute;
+	transition: opacity 0.35s, transform 0.35s;
+
+	transform: translateY(-1em);
+	opacity: 0;
 	left: -9999px;
 
 	.tooltips-top & {
