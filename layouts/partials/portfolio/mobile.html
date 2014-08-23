@@ -1,9 +1,5 @@
-<div class="entry-layout mobile">
-	<div class="entry-body">
-		<%= content_for(@item, :body) %>
-	</div>
-
-	<div class="mobile-images">
+<div class="entry-layout image-right mobile">
+	<div class="entry-image">
 		<div class="mobile-portrait">
 			<%=
 			render $partial_layouts+'image',
@@ -19,5 +15,9 @@
 			:alt    => @layout_config[:landscape_alt]
 			%>
 		</div>
+	</div>
+
+	<div class="entry-body">
+		<%= content_for(@item, :body) %>
 	</div>
 </div>

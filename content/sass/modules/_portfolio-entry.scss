@@ -1,6 +1,12 @@
 .portfolio-entry {
 	margin-bottom: rhythm(3);
 
+	.entry-heading {
+		@include pad(1);
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
 	// Completed portfolio entries
 	&.completed {
 		// Base styles
@@ -9,15 +15,9 @@
 			margin-bottom: rhythm(1);
 		}
 
-		.entry-heading {
-			@include push(1);
-			margin-top: 0;
-			margin-bottom: 0;
-		}
-
 		.entry-date {
 			@include adjust-font-size-to($h4-font-size);
-			@include push(2);
+			@include pad(2);
 			margin-bottom: rhythm(1, $h4-font-size);
 			font-family: $sans-serif;
 			color: $secondary-text-color;
@@ -39,10 +39,6 @@
 				color: $accent-contrast-color;
 			}
 		}
-		
-		@import 'portfolio/image-right';
-		@import 'portfolio/image-left';
-		@import 'portfolio/mobile';
 	}
 
 	// In-progress portfolio entries
@@ -50,8 +46,7 @@
 		// Base styles
 
 		.entry-heading {
-			margin-top: 0;
-			text-transform: none;
+			@include margin-trailer(0.5);
 		}
 
 		.entry-link {
@@ -61,6 +56,10 @@
 		// Layout styles
 
 		@import 'portfolio/in-progress/text';
-		@import 'portfolio/in-progress/image-left';
+		/*@import 'portfolio/in-progress/image-left';*/
 	}
 }
+
+@import 'portfolio/image-right';
+@import 'portfolio/image-left';
+@import 'portfolio/mobile';

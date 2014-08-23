@@ -1,39 +1,19 @@
 .mobile {
-	overflow: hidden;
-
-	.entry-body {
-		@include span(7);
-		@include push(2);
-		margin-top: rhythm(2);
-		float: left;
-	}
-
-	.mobile-images {
-		@include span(11);
-		@include push(1);
-		float: left;
+	& > .entry-image {
 		position: relative;
-		overflow: hidden;
 	}
 
 	.mobile-portrait {
+		position: relative;
+		z-index: 1;
 		max-width: 320px;
-
-		img {
-			display: block;
-			max-width: 100%;
-		}
 	}
 
 	.mobile-landscape {
-		@include push(4, 11);
 		position: absolute;
+		right: 0;
 		bottom: 0;
+		z-index: 0;
 		max-width: 480px;
-
-		img {
-			display: block;
-			max-width: 100%;
-		}
 	}
 }

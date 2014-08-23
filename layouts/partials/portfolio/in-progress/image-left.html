@@ -1,6 +1,10 @@
 <div class="entry-layout image-left">
+	<% if @layout_config[:primary_block] %>
+		<h2 class="entry-heading"><%= @item[:title] %></h2>
+	<% end %>
+
 	<%=
-	render $in_progress_layouts+'shared/entry-image',
+	render $portfolio_layouts+'shared/entry-image',
 	:layout_config => @layout_config
 	%>
 
