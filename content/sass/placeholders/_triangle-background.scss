@@ -1,5 +1,0 @@
-%triangle-background {
-	background: $light-background-color top center repeat;
-	@include downward-triangle-background($background-color, $height: 19);
-	background-size: 1.5em;
-}

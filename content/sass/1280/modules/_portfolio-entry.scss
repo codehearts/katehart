@@ -1,4 +1,11 @@
 .portfolio-entry {
 	@import 'portfolio/image-right';
 	@import 'portfolio/image-left';
+
+	.entry-image {
+		img {
+			background: $light-background-color;
+			border: 1em solid $light-background-color;
+		}
+	}
 }
