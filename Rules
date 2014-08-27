@@ -18,24 +18,6 @@ compile '/sass/style/' do
 	filter :sass, Compass.sass_engine_options
 end
 
-compile '/images/portfolio/*/', :rep => :size_960 do
-	if item.binary?
-		filter :image_resizer, :width => 960
-	end
-end
-
-compile '/images/portfolio/*/', :rep => :size_640 do
-	if item.binary?
-		filter :image_resizer, :width => 640
-	end
-end
-
-compile '/images/portfolio/*/', :rep => :size_480 do
-	if item.binary?
-		filter :image_resizer, :width => 480
-	end
-end
-
 # Run all images through a lossless image compressor
 compile '/images/*/' do
 	if item.binary?
@@ -43,9 +25,30 @@ compile '/images/*/' do
 	end
 end
 
-# Don’t filter or layout other media files
+# Create 960px wide images
+compile '/images/portfolio/*/', :rep => :size_960 do
+	if item.binary?
+		filter :image_resizer, :width => 960
+	end
+end
+
+# Create 640px wide images
+compile '/images/portfolio/*/', :rep => :size_640 do
+	if item.binary?
+		filter :image_resizer, :width => 640
+	end
+end
+
+# Create 480px wide images
+compile '/images/portfolio/*/', :rep => :size_480 do
+	if item.binary?
+		filter :image_resizer, :width => 480
+	end
+end
+
+# Minify JS and merge into scripts.js
 compile '/js/*' do
-	filter :erb
+	filter :erb # Necessary for merging into scripts.js
 	filter :uglify_js if File.basename(item[:content_filename], ".*") == 'scripts'
 end
 
@@ -61,41 +64,36 @@ end
 
 
 
-# Route compiled style.scss to a css dir
+# Route compiled style.scss to a CDN CSS dir
 route '/sass/style' do
-	'/css/style.css'
+	'/cdn/css/style.css'
 end
 
-# Don't route other sass files
+# Don't route Sass files
 route '/sass/*' do
 	nil
 end
 
-# Only route the concatenated and minified scripts.js file
+# Only route the concatenated and minified scripts.js file to the CDN
 route '/js/*' do
-	item.identifier.chop + '.' + item[:extension] if File.basename(item[:content_filename], ".*") == 'scripts'
+	'/cdn' + item.identifier.chop + '.' + item[:extension] if File.basename(item[:content_filename], ".*") == 'scripts'
 end
 
 # Don't route data files
-route %r{^/(contact_info|profiles)/.+/$} do
-	nil
-end
-
-# Don't route portfolio items
-route '/portfolio/*' do
+route %r{^/(contact_info|profiles|portfolio)/.+/$} do
 	nil
 end
 
 route '/images/portfolio/*/', :rep => :size_960 do
-	item.identifier.chop + '-960.' + item[:extension]
+	'/cdn' + item.identifier.chop + '-960.' + item[:extension]
 end
 
 route '/images/portfolio/*/', :rep => :size_640 do
-	item.identifier.chop + '-640.' + item[:extension]
+	'/cdn' + item.identifier.chop + '-640.' + item[:extension]
 end
 
 route '/images/portfolio/*/', :rep => :size_480 do
-	item.identifier.chop + '-480.' + item[:extension]
+	'/cdn' + item.identifier.chop + '-480.' + item[:extension]
 end
 
 # General routing
