@@ -1,3 +1,13 @@
+@import 'compass/css3/transition';
+@import 'compass/css3/transform';
+
+$contact-transition-time: 0.35s;
+$contact-tooltip-transitions: #{
+	"opacity #{$contact-transition-time},
+	-webkit-transform #{$contact-transition-time},
+	transform #{$contact-transition-time}
+"};
+
 .contact-info {
 	& > li {
 		margin-right: 1em;
@@ -6,8 +16,10 @@
 
 		&:hover {
 			.contact-data {
-				transform: translateY(0);
+				@include transform(translateY(0));
+				@include transition($contact-tooltip-transitions, left 0.1ms step-end);
 				opacity: 1;
+
 				left: 0;
 				right: auto;
 			}
@@ -22,10 +34,12 @@
 .contact-data {
 	@extend %tooltip;
 
-	transition: opacity 0.35s, transform 0.35s;
+	$time: 0.35s;
+	@include transition($contact-tooltip-transitions, left $contact-transition-time step-end);
 
-	transform: translateY(-1em);
+	@include transform(translateY(-1em));
 	opacity: 0;
+
 	left: -9999px;
 
 	.tooltips-top & {
