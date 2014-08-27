@@ -14,8 +14,8 @@
 }
 
 #footer-contents {
-	@include span(19);
-	@include push(1);
+	width: nh-span(19);
+	padding-left: nh-span(1);
 
 	.contact-info-heading {
 		margin: 0;

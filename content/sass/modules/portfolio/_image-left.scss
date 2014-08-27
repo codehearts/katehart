@@ -1,11 +1,11 @@
 .image-left {
 	overflow: hidden;
 
-	.entry-body {
+	& > .entry-body {
 		@extend %image-left-body;
 	}
 
-	.entry-image {
+	& > .entry-image {
 		@extend %image-left;
 	}
 }

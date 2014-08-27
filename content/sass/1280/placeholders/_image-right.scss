@@ -1,7 +1,7 @@
 %image-right-1280 {
-	@include span(18);
-	@include push(2);
 	@include margin-trailer(1);
+	margin-left: nh-span(2);
+	width: nh-span(18);
 	float: none;
 
 	img {
@@ -11,7 +11,7 @@
 }
 
 %image-right-body-1280 {
-	@include span(18);
 	@include column-count(2);
 	@include hyphens(auto);
+	width: nh-span(18);
 }

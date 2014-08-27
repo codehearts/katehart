@@ -5,5 +5,5 @@
 %image-left-body-1280 {
 	@extend %image-right-body-1280;
 
-	@include pad(2);
+	padding-left: nh-span(2);
 }

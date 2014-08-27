@@ -31,15 +31,15 @@
 
 .profile {
 	& > h3 {
-		@include pull(1);
+		margin-left: nh-span(-1);
 	}
 
 	& > footer {
-		@include pad(2);
+		padding-left: nh-span(2);
 		float: left;
 
 		& > h3 {
-			@include pull(1, 7)
+			margin-left: nh-span(-1, 7);
 		}
 	}
 

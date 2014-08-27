@@ -1,17 +1,6 @@
 @import 'compass/css3/transform';
 @import 'compass/typography/vertical_rhythm';
 
-$sans-serif: futura-pt, 'Futura PT', Futura, 'Avenir Next', Avenir, sans-serif;
-$serif: adobe-garamond-pro, 'Adobe Garamond Pro', Georgia, 'Times New Roman', Times, serif;
-
-$base-font-size:   21px;
-$base-line-height: 26px;
-$min-line-padding: 0;
-$h1-font-size: 60px;
-$h2-font-size: 48px;
-$h3-font-size: 26px;
-$h4-font-size: 21px;
-
 @include establish-baseline;
 
 body {

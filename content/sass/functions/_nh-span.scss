@@ -1,0 +1,4 @@
+@function nh-span($columns, $parent-size: $grid-columns) {
+	$column-width: ($grid-width / $parent-size) / $grid-width;
+	@return $column-width * $columns * 100%;
+}

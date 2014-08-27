@@ -1,9 +1,0 @@
-.text {
-	@include span(7);
-	@include push(2);
-
-	.entry-heading {
-		@include span(8, 7);
-		@include pull(1, 7);
-	}
-}

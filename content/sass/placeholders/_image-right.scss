@@ -1,5 +1,5 @@
 %image-right {
-	@include push(1);
+	margin-left: nh-span(1);
 
 	transition: width 0.5s, margin 0.5s;
 
@@ -13,6 +13,6 @@
 }
 
 %image-right-body {
-	@include push(2);
+	margin-left: nh-span(2);
 	overflow: hidden; // Prevents text from spilling out under the entry-image
 }

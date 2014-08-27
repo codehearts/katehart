@@ -1,7 +1,7 @@
 %image-left {
 	@extend %image-right;
 
-	@include push(2);
+	margin-left: nh-span(2);
 
 	float: left;
 }
@@ -9,6 +9,6 @@
 %image-left-body {
 	@extend %image-right-body;
 
-	@include pad(1);
-	@include push(0);
+	margin-left: 0;
+	padding-left: nh-span(1);
 }
