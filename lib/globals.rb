@@ -2,9 +2,10 @@
 
 $contact_info = ['email', 'twitter', 'github']
 
-$js_dir           = 'js/'
-$css_dir          = 'css/'
-$images           = 'images/'
+$cdn              = 'http://cdn.staging.iamnatehart.com/'
+$js_dir           = $cdn + 'js/'
+$css_dir          = $cdn + 'css/'
+$images           = $cdn + 'images/'
 $profile_images   = $images + 'profile/'
 $portfolio_images = $images + 'portfolio/'
 
