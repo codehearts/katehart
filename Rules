@@ -84,6 +84,10 @@ route %r{^/(contact_info|profiles|portfolio)/.+/$} do
 	nil
 end
 
+route '/images/*' do
+	'/cdn' + item.identifier.chop + '.' + item[:extension]
+end
+
 route '/images/portfolio/*/', :rep => :size_960 do
 	'/cdn' + item.identifier.chop + '-960.' + item[:extension]
 end
