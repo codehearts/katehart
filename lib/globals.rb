@@ -2,7 +2,8 @@
 
 $contact_info = ['email', 'twitter', 'github']
 
-$cdn              = 'http://cdn.staging.iamnatehart.com/'
+#$cdn              = 'http://cdn.staging.iamnatehart.com/'
+$cdn              = 'cdn/'
 $js_dir           = $cdn + 'js/'
 $css_dir          = $cdn + 'css/'
 $images           = $cdn + 'images/'
