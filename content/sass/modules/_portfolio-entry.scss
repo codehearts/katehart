@@ -16,9 +16,7 @@
 		}
 
 		.entry-date {
-			@include adjust-font-size-to($h4-font-size);
 			padding-left: nh-span(2);
-			margin-bottom: rhythm(1, $h4-font-size);
 			font-family: $sans-serif;
 			color: $secondary-text-color;
 		}

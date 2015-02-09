@@ -19,31 +19,16 @@ h1 {
 		font-style: normal;
 		color: $accent-color;
 	}
-
-	.inverted & {
-		color: $primary-text-color;
-
-		& > em {
-			color: $accent-contrast-color;
-		}
-	}
 }
 
 h2 {
-	@extend h1;
-	color: $accent-color;
-
-	.inverted & {
-		color: $accent-contrast-color;
-	}
+	@include adjust-font-size-to($h2-font-size);
+	margin: rhythm(1, $h2-font-size) 0;
 }
 
 h3 {
 	@include adjust-font-size-to($h3-font-size);
 	margin: rhythm(1, $h3-font-size) 0;
-	text-transform: lowercase;
-	font-family: $serif;
-	color: $primary-text-color;
 }
 
 .heading-aside {
@@ -71,7 +56,6 @@ p, ol, ul, blockquote {
 a {
 	display: inline-block;
 	text-decoration: none;
-	text-transform: lowercase;
 	font-style: italic;
 	color: $primary-text-color;
 
@@ -81,13 +65,5 @@ a {
 
 	&:active {
 		@include translate(1px, 1px);
-	}
-
-	.inverted & {
-		color: $accent-contrast-color;
-
-		&:hover {
-			color: $primary-text-color;
-		}
 	}
 }
