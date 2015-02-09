@@ -11,7 +11,6 @@ $tip-size: 7px;
 	top: rhythm(2);
 	text-transform: lowercase;
 	font-family: $sans-serif;
-	color: $accent-contrast-color;
 	width: 250px;
 	pointer-events: none;
 
@@ -28,18 +27,6 @@ $tip-size: 7px;
 		border: $tip-size solid $accent-color;
 		border-top-color: transparent;
 		border-right-color: transparent;
-	}
-
-	.inverted & {
-		background-color: $accent-contrast-color;
-		color: $accent-color;
-
-		// Tip
-		&::before {
-			border-color: $accent-contrast-color;
-			border-top-color: transparent;
-			border-right-color: transparent;
-		}
 	}
 }
 
@@ -60,7 +47,6 @@ $tip-size: 7px;
 	.inverted & {
 		// Tip
 		&::before {
-			border-color: $accent-contrast-color;
 			border-bottom-color: transparent;
 			border-left-color: transparent;
 		}
