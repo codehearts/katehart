@@ -2,7 +2,7 @@
 # More info at https://github.com/guard/guard#readme
 
 ## Uncomment and set this to only include directories you want to watch
-# directories %w(app lib config test spec feature)
+# directories %w(app lib config test spec features)
 
 ## Uncomment to clear the screen before every task
 # clearing :on
@@ -14,8 +14,8 @@
 ##  $ while bundle exec guard; do echo "Restarting Guard..."; done
 ##
 ## Note: if you are using the `directories` clause above and you are not
-## watching the project directory ('.'), the you will want to move the Guardfile
-## to a watched dir and symlink it back, e.g.
+## watching the project directory ('.'), then you will want to move
+## the Guardfile to a watched dir and symlink it back, e.g.
 #
 #  $ mkdir config
 #  $ mv Guardfile config/
