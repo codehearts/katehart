@@ -67,8 +67,9 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update
     sudo apt-get install -y bundler \
-		advancecomp optipng pngquant \
+		imagemagick advancecomp optipng pngquant \
 		jhead jpegoptim libjpeg-turbo-progs
+	sudo apt-get -y dist-upgrade
 
 	cd /vagrant
 	bundle install
