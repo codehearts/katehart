@@ -78,7 +78,7 @@ Vagrant.configure(2) do |config|
 	su vagrant
 	screen -d -m -S nanoc
 	# Guard needs to poll because the VM won't trigger the file events
-	screen -S nanoc -X exec bundle exec guard -p -l 10
+	screen -S nanoc -X exec bundle exec guard -p -l 3
 	screen -S nanoc -X screen
 	screen -S nanoc -X exec nanoc view
   SHELL
