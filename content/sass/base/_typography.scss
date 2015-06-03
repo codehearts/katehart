@@ -24,11 +24,17 @@ h1 {
 h2 {
 	@include adjust-font-size-to($h2-font-size);
 	margin: rhythm(1, $h2-font-size) 0;
+	margin-left: -20px;
+	padding-left: 15px;
+	border-left: 5px solid $accent-color;
 }
 
 h3 {
 	@include adjust-font-size-to($h3-font-size);
 	margin: rhythm(1, $h3-font-size) 0;
+	margin-left: -20px;
+	padding-left: 15px;
+	border-left: 5px solid $accent-color;
 }
 
 .heading-aside {
