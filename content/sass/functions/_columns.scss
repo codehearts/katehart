@@ -1,0 +1,10 @@
+@function column_span($columns, $parent-size: $column-count) {
+	$container-width: $grid-column * $parent-size + $grid-gutter * ($parent-size - 1);
+	$column-width: $grid-column * $columns + $grid-gutter * ($columns - 1);
+	@return $column-width / $container-width * 100%;
+}
+
+@function column_gutter($parent-size: $column-count) {
+	$container-width: $grid-column * $parent-size + $grid-gutter * ($parent-size - 1);
+	@return $grid-gutter / $container-width * 100%;
+}
