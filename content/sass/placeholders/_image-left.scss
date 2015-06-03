@@ -1,7 +1,7 @@
 %image-left {
 	@extend %image-right;
 
-	margin-left: nh-span(2);
+	margin-left: column_span(2);
 
 	float: left;
 }
@@ -9,5 +9,5 @@
 %image-left-body {
 	@extend %image-right-body;
 
-	padding-left: nh-span(1);
+	padding-left: column_span(1);
 }

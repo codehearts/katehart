@@ -1,10 +1,8 @@
 %image-right {
-	margin-left: nh-span(1);
-
 	transition: width 0.5s, margin 0.5s;
 
+	max-width: column_span(7, 14);
 	float: right;
-	width: 960px;
 
 	img {
 		display: block; // Removes whitespace around image
@@ -13,6 +11,5 @@
 }
 
 %image-right-body {
-	padding-left: nh-span(2);
 	overflow: hidden; // Prevents text from spilling out under the entry-image
 }
