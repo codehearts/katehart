@@ -18,7 +18,7 @@
 
 	// Accent color overlay
 	&:after {
-		background-color: rgba(red($accent-color), green($accent-color), blue($accent-color), 0.5);
+		background-color: rgba(red($accent-color), green($accent-color), blue($accent-color), 0.75);
 		content: '';
 
 		pointer-events: none; // Don't let this element block clicks
@@ -32,25 +32,8 @@
 }
 
 .profile {
-	& > h3 {
-		margin-left: nh-span(-1);
-	}
-
 	& > footer {
-		padding-left: nh-span(2);
-		float: left;
-
-		& > h3 {
-			margin-left: nh-span(-1, 7);
-		}
+		margin-left: column_span(1) + column_gutter();
+		width: column_span(6);
 	}
-
-	// Apply a clearfix for the floats
-	&:after {
-		content: '';
-		display: block;
-		clear: both;
-	}
-
-    *zoom: 1; // Necessary to clearfix older IE
 }
