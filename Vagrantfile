@@ -75,11 +75,10 @@ Vagrant.configure(2) do |config|
 	bundle install
 	bundle update
 
-	su vagrant
-	screen -d -m -S nanoc
+	cd /vagrant
+	echo "startup_message off" >> /etc/screenrc
 	# Guard needs to poll because the VM won't trigger the file events
-	screen -S nanoc -X exec bundle exec guard -p -l 3
-	screen -S nanoc -X screen
-	screen -S nanoc -X exec nanoc view
+	screen -dmS nanoc bash -c 'bundle exec guard -p -l 3'
+	screen -S nanoc -X screen nanoc view
   SHELL
 end
