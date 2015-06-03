@@ -7,7 +7,7 @@
 @import 'variables/typography';
 @import 'variables/grid';
 
-@import 'functions/nh-span';
+@import 'functions/columns';
 
 @import 'mixins/downward-triangle-background';
 
@@ -20,9 +20,10 @@
 @import 'placeholders/image-left';
 
 @import 'modules/profile';
-@import 'modules/contact-info';
-@import 'modules/portfolio-entry';
+/*@import 'modules/contact-info';*/
+/*@import 'modules/portfolio-entry';*/
 
+/*
 @media all and (max-width: 1600px) {
 	@import '1600/placeholders/image-right';
 	@import '1600/placeholders/image-left';
@@ -30,16 +31,20 @@
 	@import '1600/modules/profile';
 	@import '1600/modules/portfolio-entry';
 }
+*/
 
+/*
 @media all and (max-width: 1280px) {
 	/*@import '1280/base/typography';*/
+/*
 	@import '1280/placeholders/image-right';
 	@import '1280/placeholders/image-left';
 
 	@import '1280/modules/profile';
 	@import '1280/modules/portfolio-entry';
 }
-
+*/
+/*
 @media all and (max-width: 760px) {
 	@import '760/placeholders/image-right';
 	@import '760/placeholders/image-left';
@@ -47,3 +52,4 @@
 	@import '760/modules/profile';
 	@import '760/modules/portfolio-entry';
 }
+*/
