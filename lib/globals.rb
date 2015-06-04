@@ -1,6 +1,6 @@
 # Global site configuration variables
 
-$contact_info = ['email', 'twitter', 'github']
+$contact_info = ['email', 'github', 'resume']
 
 #$cdn              = 'http://cdn.staging.iamnatehart.com/'
 $cdn              = 'cdn/'

@@ -1,53 +1,11 @@
-@import 'compass/css3/transition';
-@import 'compass/css3/transform';
-
-$contact-transition-time: 0.35s;
-$contact-tooltip-transitions: #{
-	"opacity #{$contact-transition-time},
-	-webkit-transform #{$contact-transition-time},
-	transform #{$contact-transition-time}
-"};
-
 .contact-info {
 	& > li {
 		margin-right: 1em;
 		display: inline-block;
 		position: relative;
-
-		&:hover {
-			.contact-data {
-				@include transform(translateY(0));
-				@include transition($contact-tooltip-transitions, left 0.1ms step-end);
-				opacity: 1;
-
-				left: 0;
-				right: auto;
-			}
-		}
 	}
 }
 
 .contact-link {
 	@include adjust-font-size-to($h3-font-size);
-}
-
-.contact-data {
-	@extend %tooltip;
-
-	$time: 0.35s;
-	@include transition($contact-tooltip-transitions, left $contact-transition-time step-end);
-
-	@include transform(translateY(-1em));
-	opacity: 0;
-
-	left: -9999px;
-
-	.tooltips-top & {
-		@extend %tooltip-top;
-	}
-}
-
-.contact-desc {
-	margin-top: 0.5em;
-	display: block;
 }
