@@ -2,31 +2,28 @@ module Portfolio
 
 	# Content directories where portfolio entries are stored
 	@@portfolio_dir   = '/portfolio/'
-	@@in_progress_dir = @@portfolio_dir + 'in-progress/'
 	@@scraps_dir      = @@portfolio_dir + 'scraps/'
 	# Cache of known portfolio items
-	# Hash with keys 'all', 'completed', 'in-progress', and 'scraps'
+	# Hash with keys 'all', 'completed', and 'scraps'
 	@@known_portfolio_entries = nil
 
 	# Caches all portfolio items
 	def cache_portfolio_entries
 		if @@known_portfolio_entries == nil
 			all = @items.select { |item| item.identifier.start_with? @@portfolio_dir }
-			ongoing = all.select { |item| item.identifier.start_with? @@in_progress_dir }
 			scraps = all.select { |item| item.identifier.start_with? @@scraps_dir }
-			completed = all.select { |item| not (ongoing.include? item or scraps.include? item) }
+			completed = all.select { |item| not (scraps.include? item) }
 
 			@@known_portfolio_entries = {
 				'all'         => all,
 				'completed'   => completed,
-				'in-progress' => ongoing,
 				'scraps'      => scraps,
 			}
 		end
 	end
 
 	# Gets all portfolio items of the given type sorted by their `date` value.
-	# Valid type arguments are 'all', 'completed', 'in-progress', and 'scraps'.
+	# Valid type arguments are 'all', 'completed', 'and 'scraps'.
 	def portfolio_items(type='completed')
 		# Cache known portfolio entries
 		cache_portfolio_entries
