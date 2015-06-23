@@ -7,16 +7,13 @@
 		margin-bottom: 0;
 	}
 
-	// Completed portfolio entries
-	&.completed {
-		// Base styles
+	// Base styles
 
-		& > .entry-layout {
-			margin-bottom: rhythm(1);
-		}
+	& > .entry-layout {
+		margin-bottom: rhythm(1);
+	}
 
-		.entry-body {
-			margin-top: rhythm(1);
-		}
+	.entry-body {
+		margin-top: rhythm(1);
 	}
 }
