@@ -1,10 +1,10 @@
 .portfolio-entry {
 	margin-bottom: rhythm(3);
+	margin-left: nh-span(1) + nh-gutter();
 
 	.entry-heading {
 		margin-top: 0;
 		margin-bottom: 0;
-		padding-left: nh-span(1);
 	}
 
 	// Completed portfolio entries
@@ -15,43 +15,8 @@
 			margin-bottom: rhythm(1);
 		}
 
-		.entry-date {
-			padding-left: nh-span(2);
-			font-family: $sans-serif;
-			color: $secondary-text-color;
-		}
-
 		.entry-body {
 			margin-top: rhythm(1);
 		}
-
-		.entry-link {
-			@include adjust-font-size-to($h3-font-size);
-			border-bottom: 3px solid $accent-color;
-			font-family: $sans-serif;
-			font-style: normal;
-			color: $accent-color;
-
-			&:hover {
-				background-color: $accent-color;
-			}
-		}
-	}
-
-	// In-progress portfolio entries
-	&.in-progress {
-		// Base styles
-
-		.entry-heading {
-			@include margin-trailer(0.5);
-		}
-
-		.entry-link {
-			@include adjust-font-size-to($h3-font-size);
-		}
 	}
 }
-
-@import 'portfolio/image-right';
-@import 'portfolio/image-left';
-@import 'portfolio/mobile';
