@@ -1,6 +1,7 @@
 %image-right {
 	transition: width 0.5s, margin 0.5s;
 
+	margin-left: column_gutter();
 	max-width: column_span(7, 14);
 	float: right;
 

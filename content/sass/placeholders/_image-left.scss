@@ -1,13 +1,11 @@
 %image-left {
 	@extend %image-right;
 
-	margin-left: column_span(2);
-
+	margin-right: column_gutter();
+	margin-left: auto;
 	float: left;
 }
 
 %image-left-body {
 	@extend %image-right-body;
-
-	padding-left: column_span(1);
 }
