@@ -15,13 +15,12 @@
 @import 'base/layout';
 @import 'base/footer';
 
-@import 'placeholders/tooltip';
 @import 'placeholders/image-right';
 @import 'placeholders/image-left';
 
 @import 'modules/profile';
 @import 'modules/contact-info';
-/*@import 'modules/portfolio-entry';*/
+@import 'modules/portfolio-entry';
 
 /*
 @media all and (max-width: 1600px) {
