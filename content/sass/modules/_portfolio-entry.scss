@@ -1,19 +1,19 @@
 .portfolio-entry {
 	margin-bottom: rhythm(3);
-	margin-left: nh-span(1) + nh-gutter();
+	margin-left: column_span(1) + column_gutter();
 
-	.entry-heading {
+	& > .entry-heading {
 		margin-top: 0;
 		margin-bottom: 0;
+		width: column_span(7);
 	}
 
-	// Base styles
-
-	& > .entry-layout {
-		margin-bottom: rhythm(1);
-	}
-
-	.entry-body {
+	& > .entry-body {
+		@extend %image-right-body;
 		margin-top: rhythm(1);
+	}
+
+	& > .entry-image {
+		@extend %image-right;
 	}
 }
