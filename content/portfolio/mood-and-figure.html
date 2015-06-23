@@ -16,7 +16,6 @@ url: http://moodandfigure.com
 
 <%=
 render $portfolio_layouts+'entry',
-:template => 'image-right',
 :image => 'mood-and-figure/home',
 :image_alt => 'Screenshot of the Mood &amp; Figure home page',
 :primary_block => true
@@ -26,6 +25,8 @@ render $portfolio_layouts+'entry',
 
 <% content_for :body do %>
 <p>The color archive provides an overview of the accent colors extracted from each post on the site. I plan on adding more interesting color-based functionality in the future.</p>
+
+<p>Mood &amp; Figure also features a remarkable mobile experience by gracefully adapting to smaller screen sizes. All images are loaded adaptively to prevent mobile visitors from downloading more data than necessary.</p>
 <% end %>
 
 <%=
@@ -33,33 +34,4 @@ render $portfolio_layouts+'entry',
 :template => 'image-left',
 :image => 'mood-and-figure/color',
 :image_alt => 'Screenshot of Mood &amp; Figure&rsquo;s color page'
-%>
-
-<% content_for :body do %>
-<p>Mood &amp; Figure also features a remarkable mobile experience by gracefully adapting to smaller screen sizes. All images are loaded adaptively to prevent mobile visitors from downloading more data than necessary.</p>
-<% end %>
-
-<%=
-render $portfolio_layouts+'mobile',
-:layout_config => {
-	:primary_block => true,
-	:portrait_alt => 'Screenshot of Mood &amp; Figure&rsquo;s mobile design in portrait orientation',
-	:portrait_images => [
-		{
-		'src'      => $portfolio_images+'mood-and-figure/mobile-portrait.png',
-		'high_src' => $portfolio_images+'mood-and-figure/mobile-portrait@2x.png',
-		'is_default'   => true,
-		'serve_old_ie' => true,
-		},
-	],
-	:landscape_alt => 'Screenshot of Mood &amp; Figure&rsquo;s mobile design in landscape orientation',
-	:landscape_images => [
-		{
-		'src'      => $portfolio_images+'mood-and-figure/mobile-landscape.png',
-		'high_src' => $portfolio_images+'mood-and-figure/mobile-landscape@2x.png',
-		'is_default'   => true,
-		'serve_old_ie' => true,
-		},
-	],
-}
 %>

@@ -2,7 +2,6 @@
 title: University of Rochester Computer Interest Floor
 date: 2013-03-14
 url: https://cif.rochester.edu
-url_text: See my progress so far
 ---
 
 <% content_for :body do %>
@@ -12,17 +11,8 @@ url_text: See my progress so far
 <% end %>
 
 <%=
-render 'partials/portfolio/image-left',
-:layout_config => {
-	:primary_block => true,
-	:image_alt => 'Mockup of the CIF home page',
-	:images => [
-		{
-		'src'          => $portfolio_images+'cif/mockup.png',
-		'high_src'     => $portfolio_images+'cif/mockup@2x.png',
-		'is_default'   => true,
-		'serve_old_ie' => true,
-		},
-	],
-}
+render $portfolio_layouts+'entry',
+:image => 'cif/mockup',
+:image_alt => 'Mockup for the CIF home page',
+:primary_block => true
 %>
