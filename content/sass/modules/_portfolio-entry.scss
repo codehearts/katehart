@@ -16,4 +16,8 @@
 	& > .entry-image {
 		@extend %image-right;
 	}
+
+	.entry-link {
+		text-transform: lowercase;
+	}
 }
