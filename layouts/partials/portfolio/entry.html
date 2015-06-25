@@ -1,6 +1,6 @@
 <% if @primary_block %>
 	<h2 class="entry-heading"><%= @item[:title] %></h2>
-	<h3 class="entry-date"><%= @item[:date] %></h3>
+	<h4 class="entry-date"><%= @item[:date] %></h4>
 <% end %>
 
 <figure class="entry-image">
@@ -30,10 +30,10 @@
 
 <div class="entry-body">
 	<%= content_for(@item, :body) %>
-
-	<% if @primary_block and @item[:url] %>
-		<a href="<%= @item[:url] %>" class="entry-link" target="_blank">
-			Visit Site
-		</a>
-	<% end %>
 </div>
+
+<% if @primary_block and @item[:url] %>
+	<a href="<%= @item[:url] %>" class="entry-link" target="_blank">
+		Visit Site
+	</a>
+<% end %>
