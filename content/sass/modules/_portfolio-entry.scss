@@ -2,6 +2,12 @@
 	margin-bottom: rhythm(3);
 	margin-left: column_span(1) + column_gutter();
 
+	&::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
 	& > .entry-heading {
 		margin-top: 0;
 		margin-bottom: 0;
@@ -17,7 +23,7 @@
 		@extend %image-right;
 	}
 
-	.entry-link {
-		text-transform: lowercase;
+	& > .entry-link {
+		@extend %button;
 	}
 }
