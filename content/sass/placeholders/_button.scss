@@ -1,19 +1,15 @@
 %button {
 	@include adjust-font-size-to($h3-font-size);
-	border-left: 5px solid $accent-color;
-	margin-left: -20px;
+	background: $background-color;
+	border: 2px solid $accent-color;
 	padding: 0.25em 1ex;
-	padding-left: 15px;
 	transition: all 0.3s ease;
 	font-family: $sans-serif;
 	font-style: normal;
-	color: $primary-text-color;
+	color: $accent-color;
 
 	&:hover {
 		background: $accent-color;
-		margin-left: 0;
-		border-width: 0;
-		padding-left: 1ex;
 		color: $background-color;
 	}
 }
