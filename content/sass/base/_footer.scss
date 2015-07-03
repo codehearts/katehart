@@ -1,12 +1,9 @@
 #footer {
 	@extend .container;
-	@include downward-triangle-background($background-color);
-	background-color: $accent-color;
-	background-position: top center;
-    background-repeat: repeat-x;
-	margin-top: rhythm(8);
-	padding-top: rhythm(2);
-	padding-bottom: rhythm(2);
+	border-top: 2px solid $accent-color;
+	margin-top: rhythm(4);
+	margin-bottom: rhythm(1);
+	padding-top: rhythm(3);
 
 	& > :first-child {
 		margin-top: 0;
@@ -14,24 +11,13 @@
 }
 
 #footer-contents {
-	width: nh-span(19);
-	padding-left: nh-span(1);
-
-	.contact-info-heading {
-		margin: 0;
-		float: left;
-	}
-
-	.contact-info {
-		margin: 0 0 0 1em;
-		float: left;
-	}
+	padding-left: column_span(1);
 
 	& > .copyright {
 		@include adjust-font-size-to($h3-font-size);
-		margin: 0;
 		text-align: right;
 		text-transform: lowercase;
 		font-family: $sans-serif;
+		color: $secondary-text-color;
 	}
 }
