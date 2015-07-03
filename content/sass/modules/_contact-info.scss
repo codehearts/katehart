@@ -7,6 +7,5 @@
 }
 
 .contact-link {
-	@include adjust-font-size-to($h3-font-size);
-	text-transform: lowercase;
+	@extend %button;
 }
