@@ -18,7 +18,7 @@
 
 	// Accent color overlay
 	&:after {
-		background-color: rgba(red($accent-color), green($accent-color), blue($accent-color), 0.75);
+		background-color: rgba(red($accent-color), green($accent-color), blue($accent-color), $color_wash_opacity);
 		content: '';
 
 		pointer-events: none; // Don't let this element block clicks

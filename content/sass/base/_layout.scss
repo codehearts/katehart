@@ -1,5 +1,5 @@
 body {
-	@include downward-triangle-background($accent-color);
+	@include wave-background($accent-color, $color_wash_opacity);
 	background-color: $background-color;
 	background-position: top center;
     background-repeat: repeat-x;
