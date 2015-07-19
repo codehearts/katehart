@@ -5,6 +5,7 @@
 
 .profile-image {
 	@extend %image-right;
+	box-shadow: none;
 	margin-top: rhythm(-5);
 	position: relative; // Necessary for the color overlay
 
