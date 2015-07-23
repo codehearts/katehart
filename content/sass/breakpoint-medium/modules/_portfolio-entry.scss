@@ -1,0 +1,9 @@
+.portfolio-entry {
+	& > .entry-body {
+		@extend %image-right-body-medium;
+	}
+
+	& > .entry-image {
+		@extend %image-right-medium;
+	}
+}

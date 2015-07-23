@@ -1,0 +1,5 @@
+.portfolio-entry {
+	& > .entry-body {
+		@extend %image-right-body-small;
+	}
+}
