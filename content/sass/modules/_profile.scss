@@ -5,7 +5,6 @@
 
 .profile-image {
 	@extend %image-right;
-	box-shadow: none;
 	margin-top: rhythm(-5);
 	position: relative; // Necessary for the color overlay
 
@@ -15,6 +14,7 @@
 	-webkit-clip-path: $clipping-polygon;
 	clip-path: url($clipping-svg);
 	clip-path: $clipping-polygon;
+	z-index: -1;
 
 	// Accent color overlay
 	&:after {
@@ -29,12 +29,15 @@
 		bottom: 0;
 		left: 0;
 	}
+
+	img {
+		box-shadow: none;
+	}
 }
 
 .profile {
 	& > footer {
 		margin-top: rhythm(1);
 		margin-left: column_span(1) + column_gutter();
-		width: column_span(6);
 	}
 }
