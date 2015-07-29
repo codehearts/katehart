@@ -5,7 +5,7 @@
 
 .profile-image {
 	@extend %image-right;
-	margin-top: rhythm(-5);
+	margin-top: -5%;
 	position: relative; // Necessary for the color overlay
 
 	// Triangular clipping mask
