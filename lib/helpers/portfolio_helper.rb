@@ -3,6 +3,7 @@ module Portfolio
 	# Content directories where portfolio entries are stored
 	@@portfolio_dir   = '/portfolio/'
 	@@scraps_dir      = @@portfolio_dir + 'scraps/'
+	@@disabled_dir    = @@portfolio_dir + 'disabled/'
 	# Cache of known portfolio items
 	# Hash with keys 'all', 'completed', and 'scraps'
 	@@known_portfolio_entries = nil
@@ -12,12 +13,14 @@ module Portfolio
 		if @@known_portfolio_entries == nil
 			all = @items.select { |item| item.identifier.start_with? @@portfolio_dir }
 			scraps = all.select { |item| item.identifier.start_with? @@scraps_dir }
-			completed = all.select { |item| not (scraps.include? item) }
+			disabled = all.select { |item| item.identifier.start_with? @@disabled_dir }
+			completed = all.select { |item| not ((scraps.include? item) or (disabled.include? item)) }
 
 			@@known_portfolio_entries = {
 				'all'         => all,
 				'completed'   => completed,
 				'scraps'      => scraps,
+				'disabled'    => disabled,
 			}
 		end
 	end
