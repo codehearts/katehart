@@ -1,22 +1,18 @@
 ---
 title: April Hammock Studio
-date: 2011-12-05
+date: December 2011
 url: http://aprilhammockstudio.com/
 ---
 
 <% content_for :body do %>
-<p>April Hammock is a recognized artist who has exhibited work in national and local galleries everywhere from New York to her home state of Louisiana. I was tasked with refreshing her existing site and making it easier to maintain while putting a focus on her art.</p>
+<p>April Hammock is a recognized artist with national and local exhibits from New York to her home state of Louisiana. I was tasked with refreshing her existing site and making it easier for her to maintain.</p>
 
-<p>April Hammock is a recognized artist who has exhibited her artwork throughout the US and taught across her home state of Louisiana.</p>
-
-<p>As an artist, it was important for the site to feature her latest works and exhibitions. The previous solution was difficult to maintain and required the developer to make any changes, so I was asked to refresh the existing design and develop the site in a way that could easily be updated.</p>
-
-<p>My solution was to move the site from Flash to a native html website running on WordPress. From there works can easily be uploaded and organized, and she has full control over the rest of her content.</p>
+<p>The previous site was developed in Flash, so I ported the design to a WordPress theme and made tweaks to simplify the uploading process. A simple date picker allows the works to be automatically sorted into galleries specified by the artist.</p>
 <% end %>
 
 <%=
 render $portfolio_layouts+'entry',
 :image => 'april-hammock/home',
-:image_alt => 'Screenshot of the April Hammock home page',
+:image_alt => 'Screenshot of the April Hammock Studio website',
 :primary_block => true
 %>
