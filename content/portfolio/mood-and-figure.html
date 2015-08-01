@@ -5,13 +5,11 @@ url: http://moodandfigure.com
 ---
 
 <% content_for :body do %>
-<p>Mood &amp; Figure is a collection of inspirational images I&rsquo;ve found over the years. The site is an image blog that playfully utilizes color data taken from each entry and encourages visitors to show their gratitude towards the artists. As one of my side projects, I still have some big plans for it!</p>
+<p>Mood &amp; Figure is a collection of inspiration I&rsquo;ve found over the years.</p>
 
-<p>Mood &amp; Figure is an image blog that aims to collect creative and inspirational works while crediting their original creators.</p>
+<p>The site is an image blog that subtly uses colors taken from each entry, and always links back to the original artists if possible. There&rsquo;s also tag-based search that allows for excluding certain tags and including multiple tags.</p>
 
-<p>Built on top of WordPress with lots of customized functionality, every image has its color data analyzed and an accent color extracted from it, which is then subtly applied to that entry on the site. There is also tag-based searching that allows you to filter through the various categories of images (such as photographs and print designs), as well as a system for giving thanks to the original artist (similar to &ldquo;liking&rdquo; a post).</p>
-
-<p>As this is a side project of mine, I&rsquo;m constantly coming up with ideas for new directions to take it in.</p>
+<p>Mood &amp; Figure also adapts to smaller screen sizes, and loads all images adaptively to prevent mobile visitors from downloading more data than necessary.</p>
 <% end %>
 
 <%=
@@ -19,19 +17,4 @@ render $portfolio_layouts+'entry',
 :image => 'mood-and-figure/home',
 :image_alt => 'Screenshot of the Mood &amp; Figure home page',
 :primary_block => true
-%>
-
-
-
-<% content_for :body do %>
-<p>The color archive provides an overview of the accent colors extracted from each post on the site. I plan on adding more interesting color-based functionality in the future.</p>
-
-<p>Mood &amp; Figure also features a remarkable mobile experience by gracefully adapting to smaller screen sizes. All images are loaded adaptively to prevent mobile visitors from downloading more data than necessary.</p>
-<% end %>
-
-<%=
-render $portfolio_layouts+'entry',
-:template => 'image-left',
-:image => 'mood-and-figure/color',
-:image_alt => 'Screenshot of Mood &amp; Figure&rsquo;s color page'
 %>
