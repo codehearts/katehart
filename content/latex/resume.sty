@@ -1,0 +1,57 @@
+\usepackage[margin=1.25in]{geometry}
+\usepackage[document]{ragged2e}
+\usepackage[table]{xcolor}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[compact]{titlesec}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\newgeometry{top=4em,bottom=0.5in,right=1.25in,left=1.25in}
+
+% Set the document typeface
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\familydefault}{ptm}
+
+% Don't indent paragraphs
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}%
+
+% Spacing between columns
+\setlength\columnsep{30pt}
+
+% Custom colors
+\definecolor{accentcolor}{rgb}{1,0.4784313725,0.6705882353}
+\definecolor{secondarycolor}{rgb}{0.7764705882,0.7960784314,0.7764705882}
+
+% Formatting for section titles and emphasis
+\titleformat{\section}
+	{\fontsize{32pt}{32pt}\lowercase}
+	{\thesection}
+	{1em}
+	{\color{secondarycolor}\sffamily}
+\titleformat{\subsection}
+	{\Large}
+	{\thesubsection}
+	{1em}
+	{\hspace{-10pt}\textcolor{accentcolor}{\rule[-.2\baselineskip]{2pt}{.9\baselineskip}}\hspace{8pt}}
+\DeclareTextFontCommand{\emph}{\color{accentcolor}}
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titlespacing{\subsection}{0pt}{0pt}{-7.5pt}
+
+\pagenumbering{gobble} % Remove page numbers
+
+\setlist[1]{leftmargin=0mm} % Use hanging indentation for lists
+\setlist{itemsep=1pt} % Reduce the vertical space between list items
+\def\labelitemi{--} % Use dashes instead of bullets
+\def\labelitemii{--} % Use dashes instead of bullets
+
+\setlength{\fboxsep}{2mm}
+\setlength{\fboxrule}{1pt}
+
+\newcommand{\button}[2]{\href{#1}{\color{accentcolor}{\fbox{\sffamily#2\strut}}}\hspace{1ex}}
+
+\hypersetup{%
+	colorlinks=true,
+	linkcolor=accentcolor
+}
