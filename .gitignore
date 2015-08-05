@@ -2,4 +2,3 @@ output/
 tmp/
 crash.log
 Gemfile.lock
-nanoc.yaml
