@@ -65,6 +65,9 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
+    echo -n 'Enter username for deployment: '; read deploy_name
+	echo "\nHost portfolio\n\tHostName nejt.net\n\tUser ${deploy_name}\n" | sudo tee -a /etc/ssh/ssh_config
+
     sudo apt-get update
     sudo apt-get install -y bundler \
 		imagemagick advancecomp optipng pngquant \
