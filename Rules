@@ -52,8 +52,13 @@ compile '/images/portfolio/*/', :rep => :size_480 do
 	end
 end
 
+# Compile LaTeX files
+compile '/latex/*/' do
+	filter :latex, :sty_dir => 'styles/' if File.extname(item[:content_filename]) == '.tex'
+end
+
 # Minify JS and merge into scripts.js
-compile '/js/*' do
+compile '/js/*/' do
 	filter :erb # Necessary for merging into scripts.js
 	filter :uglify_js if File.basename(item[:content_filename], ".*") == 'scripts'
 end
@@ -83,6 +88,15 @@ end
 # Only route the concatenated and minified scripts.js file to the CDN
 route '/js/*' do
 	'/cdn' + item.identifier.chop + '.' + item[:extension] if File.basename(item[:content_filename], ".*") == 'scripts'
+end
+
+# Route compiled LaTeX to the root directory as PDF
+route '/latex/*' do
+	if item[:extension] == 'tex'
+		'/' + File.basename(item.raw_filename, '.tex') + '.pdf'
+	else
+		nil
+	end
 end
 
 # Don't route data files
