@@ -68,7 +68,8 @@ Vagrant.configure(2) do |config|
     sudo apt-get update
     sudo apt-get install -y bundler \
 		imagemagick advancecomp optipng pngquant \
-		jhead jpegoptim libjpeg-turbo-progs
+		jhead jpegoptim libjpeg-turbo-progs \
+		texlive-full
 	sudo apt-get -y dist-upgrade
 
 	cd /vagrant
