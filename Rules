@@ -32,23 +32,23 @@ compile '/images/*/' do
 end
 
 # Create 960px wide images
-compile '/images/portfolio/*/', :rep => :size_960 do
+compile '/images/portfolio/*/', :rep => :size_1280 do
 	if item.binary?
-		filter :image_resizer, :width => 960
+		filter :image_resizer, :width => 1280
 	end
 end
 
 # Create 640px wide images
-compile '/images/portfolio/*/', :rep => :size_640 do
+compile '/images/portfolio/*/', :rep => :size_896 do
 	if item.binary?
-		filter :image_resizer, :width => 640
+		filter :image_resizer, :width => 896
 	end
 end
 
 # Create 480px wide images
-compile '/images/portfolio/*/', :rep => :size_480 do
+compile '/images/portfolio/*/', :rep => :size_512 do
 	if item.binary?
-		filter :image_resizer, :width => 480
+		filter :image_resizer, :width => 512
 	end
 end
 
@@ -108,16 +108,16 @@ route '/images/*' do
 	'/cdn' + item.identifier.chop + '.' + item[:extension]
 end
 
-route '/images/portfolio/*/', :rep => :size_960 do
-	'/cdn' + item.identifier.chop + '-960.' + item[:extension]
+route '/images/portfolio/*/', :rep => :size_1280 do
+	'/cdn' + item.identifier.chop + '-1280.' + item[:extension]
 end
 
-route '/images/portfolio/*/', :rep => :size_640 do
-	'/cdn' + item.identifier.chop + '-640.' + item[:extension]
+route '/images/portfolio/*/', :rep => :size_896 do
+	'/cdn' + item.identifier.chop + '-896.' + item[:extension]
 end
 
-route '/images/portfolio/*/', :rep => :size_480 do
-	'/cdn' + item.identifier.chop + '-480.' + item[:extension]
+route '/images/portfolio/*/', :rep => :size_512 do
+	'/cdn' + item.identifier.chop + '-512.' + item[:extension]
 end
 
 # General routing

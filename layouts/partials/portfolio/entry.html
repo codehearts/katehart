@@ -9,20 +9,20 @@
 	:alt    => @image_alt,
 	:images => [
 			{
-			'src'      => $portfolio_images+@image+'-960.png',
+			'src'      => $portfolio_images+@image+'-1280.png',
 			'high_src' => $portfolio_images+@image+'.png',
 			'is_default'   => true,
 			'serve_old_ie' => true,
 			},
 			{
-			'src'      => $portfolio_images+@image+'-640.png',
-			'high_src' => $portfolio_images+@image+'-960.png',
-			'query'    => '(max-width: 760px)',
+			'src'      => $portfolio_images+@image+'-896.png',
+			'high_src' => $portfolio_images+@image+'-1280.png',
+			'query'    => '(max-width: 1024px)',
 			},
 			{
-			'src'      => $portfolio_images+@image+'-480.png',
-			'high_src' => $portfolio_images+@image+'-640.png',
-			'query'    => '(max-width: 570px)',
+			'src'      => $portfolio_images+@image+'-512.png',
+			'high_src' => $portfolio_images+@image+'-896.png',
+			'query'    => '(max-width: 640px)',
 			},
 		]
 	%>
