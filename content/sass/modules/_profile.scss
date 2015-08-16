@@ -1,0 +1,43 @@
+.profile-body {
+	@extend %image-right-body;
+	margin-left: column_span(1) + column_gutter();
+}
+
+.profile-image {
+	@extend %image-right;
+	margin-top: -5%;
+	position: relative; // Necessary for the color overlay
+
+	// Triangular clipping mask
+	$clipping-svg: 'data:image/svg+xml;utf8,<svg height="0" xmlns="http://www.w3.org/2000/svg" version="1.1"><clipPath id="c1" clipPathUnits="objectBoundingBox"><polygon points="0,1 0.25,0 1,0.75" /></clipPath></svg>#c1';
+	$clipping-polygon: polygon(0 100%, 25% 0, 100% 75%);
+	-webkit-clip-path: $clipping-polygon;
+	clip-path: url($clipping-svg);
+	clip-path: $clipping-polygon;
+	z-index: -1;
+
+	// Accent color overlay
+	&:after {
+		background-color: rgba(red($accent-color), green($accent-color), blue($accent-color), $color_wash_opacity);
+		content: '';
+
+		pointer-events: none; // Don't let this element block clicks
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
+	img {
+		box-shadow: none;
+	}
+}
+
+.profile {
+	& > footer {
+		margin-top: rhythm(1);
+		margin-left: column_span(1) + column_gutter();
+	}
+}

@@ -1,0 +1,28 @@
+.portfolio-entry {
+	margin-bottom: rhythm(3);
+	margin-left: column_span(1) + column_gutter();
+
+	&::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	& > .entry-heading {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	& > .entry-body {
+		@extend %image-right-body;
+		margin-top: rhythm(1);
+	}
+
+	& > .entry-image {
+		@extend %image-right;
+	}
+
+	& > .entry-link {
+		@extend %button;
+	}
+}

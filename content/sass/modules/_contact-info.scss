@@ -1,0 +1,11 @@
+.contact-info {
+	& > li {
+		margin-right: 1em;
+		display: inline-block;
+		position: relative;
+	}
+}
+
+.contact-link {
+	@extend %button;
+}

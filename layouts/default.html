@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=0.5, width=device-width, user-scalable=yes">
+
+	<title><%= @item[:title] %></title>
+
+	<link rel="shortcut icon" href="favicon.ico" />
+
+	<link rel="stylesheet" href="<%= $css_dir %>style.css">
+
+	<script src="//use.typekit.net/vvg8atw.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+	<div class="container">
+		<%= yield %>
+	</div>
+
+	<footer id="footer" role="contentinfo">
+		<h1>That's it for now. <em>Thanks</em> for taking a look!</h1>
+
+		<div id="footer-contents">
+			<p class="copyright">&copy; 2015 Nate Hart</p>
+		</div>
+	</footer>
+
+	<script src="<%= $js_dir %>scripts.js"></script>
+</body>
+</html>

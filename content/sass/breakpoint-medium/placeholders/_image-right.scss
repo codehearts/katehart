@@ -1,0 +1,14 @@
+%image-right-medium {
+	margin-left: 0;
+	max-width: 100%;
+	float: none;
+
+	img {
+		/*width: 480px;*/
+	}
+}
+
+%image-right-body-medium {
+	@include column-count(2);
+	margin-bottom: rhythm(1);
+}

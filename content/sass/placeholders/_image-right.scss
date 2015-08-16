@@ -1,0 +1,18 @@
+%image-right {
+	transition: width 0.5s, margin 0.5s;
+
+	margin-bottom: rhythm(1);
+	margin-left: column_gutter();
+	max-width: column_span(8, 14);
+	float: right;
+
+	img {
+		box-shadow: 0 0 20px rgba(0,0,0,0.1);
+		display: block; // Removes whitespace around image
+		max-width: 100%;
+	}
+}
+
+%image-right-body {
+	overflow: hidden; // Prevents text from spilling out under the entry-image
+}

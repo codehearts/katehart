@@ -1,0 +1,14 @@
+---
+title: The portfolio of Nate Hart
+---
+
+<%# Display my profile with contact information %>
+<% content_for :profile_footer do %>
+<%=
+render 'partials/contact_info',
+:contact_info => $contact_info
+%>
+<% end %>
+<%= render 'partials/profiles/profile', :profile => 'nate hart' %>
+
+<%= render 'partials/portfolio/list' %>

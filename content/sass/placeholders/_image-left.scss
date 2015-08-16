@@ -1,0 +1,11 @@
+%image-left {
+	@extend %image-right;
+
+	margin-right: column_gutter();
+	margin-left: auto;
+	float: left;
+}
+
+%image-left-body {
+	@extend %image-right-body;
+}

@@ -1,0 +1,20 @@
+---
+title: Mood &amp; Figure
+date: December 2011
+url: http://moodandfigure.com
+---
+
+<% content_for :body do %>
+<p>Mood &amp; Figure is a collection of inspiration I&rsquo;ve found over the years.</p>
+
+<p>The site is an image blog that subtly uses colors taken from each entry, and always links back to the original artists if possible. There&rsquo;s also tag-based search that allows for excluding certain tags and including multiple tags.</p>
+
+<p>Mood &amp; Figure also adapts to smaller screen sizes, and loads all images adaptively to prevent mobile visitors from downloading more data than necessary.</p>
+<% end %>
+
+<%=
+render $portfolio_layouts+'entry',
+:image => 'mood-and-figure/home',
+:image_alt => 'Screenshot of the Mood &amp; Figure home page',
+:primary_block => true
+%>

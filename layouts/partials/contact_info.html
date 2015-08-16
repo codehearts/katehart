@@ -1,0 +1,9 @@
+<ul class="contact-info <%= @classes %>">
+	<% ordered_contact_info_items(@contact_info).each do |contact| %>
+	<li>
+		<a href="<%= contact[:url] %>" class="contact-link">
+			<%= contact[:medium] %>
+		</a>
+	</li>
+	<% end %>
+</ul>

@@ -1,0 +1,9 @@
+.profile-image {
+	@extend %image-right-medium;
+	margin-top: rhythm(-1);
+	margin-bottom: rhythm(2);
+}
+
+.profile-body {
+	@extend %image-right-body-medium;
+}

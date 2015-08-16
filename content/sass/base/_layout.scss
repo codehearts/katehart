@@ -1,0 +1,12 @@
+body {
+	@include wave-background($accent-color, $color_wash_opacity);
+	background-color: $background-color;
+	background-position: top center;
+    background-repeat: repeat-x;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 50/1280*100%;
+	max-width: 1920px;
+}

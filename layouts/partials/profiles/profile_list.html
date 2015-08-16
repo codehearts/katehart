@@ -1,0 +1,10 @@
+<ul class="profiles">
+	<% @profiles.each do |profile| %>
+	<li>
+		<%=
+		render $profile_layouts+'profile',
+		:profile => profile
+		%>
+	</li>
+	<% end %>
+</ul>

@@ -1,0 +1,86 @@
+@import 'compass/css3/transform';
+@import 'compass/typography/vertical_rhythm';
+
+@include establish-baseline;
+
+body {
+	font-family: $serif;
+	color: $primary-text-color;
+}
+
+h1 {
+	@include adjust-font-size-to($h1-font-size);
+	margin: rhythm(3, $h1-font-size) 0;
+	text-transform: lowercase;
+	font-family: $sans-serif;
+	color: $secondary-text-color;
+
+	& > em {
+		font-style: normal;
+		color: $accent-color;
+	}
+}
+
+h2 {
+	@include adjust-font-size-to($h2-font-size);
+	margin: rhythm(1, $h2-font-size) 0;
+	margin-left: -20px;
+	padding-left: 15px;
+	border-left: 5px solid $accent-color;
+}
+
+h3, h4, h5 {
+	font-family: $sans-serif;
+}
+
+h3 {
+	@include adjust-font-size-to($h3-font-size);
+	margin: rhythm(1, $h3-font-size) 0;
+}
+
+h4 {
+	@include adjust-font-size-to($h4-font-size);
+	margin: rhythm(1, $h4-font-size) 0;
+}
+
+h5 {
+	@include adjust-font-size-to($h5-font-size);
+	margin: rhythm(1, $h5-font-size) 0;
+}
+
+.heading-aside {
+	display: inline-block;
+	font-family: $serif;
+	color: $secondary-text-color;
+
+	h1 & {
+		@include adjust-font-size-to($h3-font-size, $from-size: $h1-font-size);
+	}
+
+	h2 & {
+		@include adjust-font-size-to($h3-font-size, $from-size: $h2-font-size);
+	}
+}
+
+p, ol, ul, blockquote {
+	margin-bottom: rhythm(1);
+
+	// Don't break inside text columns
+	@include break-inside(avoid);
+	page-break-inside: avoid;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	font-style: italic;
+	color: $primary-text-color;
+
+	&:hover {
+		color: $accent-color;
+	}
+
+	&:active {
+		@include translate(1px, 1px);
+	}
+}

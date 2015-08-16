@@ -1,0 +1,20 @@
+---
+title: About Life
+date: June 2011
+url: http://www.vonhanaboutlife.com/
+---
+
+<% content_for :body do %>
+<p>About Life is a book that examines the philosophical questions that arose as the author escaped from Vietnam and adapted to life in the United States.</p>
+
+<p>The home page is an interactive version of the book&rsquo;s cover that allows visitors to read relevant excerpts. There&rsquo;s also a blog where the author can continue to write, as well as links for purchasing a copy of the book.</p>
+
+<p>The site itself runs on WordPress and was a fairly small project.</p>
+<% end %>
+
+<%=
+render $portfolio_layouts+'entry',
+:image => 'about-life/home',
+:image_alt => 'Screenshot of the About Life home page',
+:primary_block => true
+%>

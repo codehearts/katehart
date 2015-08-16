@@ -1,0 +1,39 @@
+<% if @primary_block %>
+	<h2 class="entry-heading"><%= @item[:title] %></h2>
+	<h4 class="entry-date"><%= @item[:date] %></h4>
+<% end %>
+
+<figure class="entry-image">
+	<%=
+	render $partial_layouts+'image',
+	:alt    => @image_alt,
+	:images => [
+			{
+			'src'      => $portfolio_images+@image+'-1280.png',
+			'high_src' => $portfolio_images+@image+'.png',
+			'is_default'   => true,
+			'serve_old_ie' => true,
+			},
+			{
+			'src'      => $portfolio_images+@image+'-896.png',
+			'high_src' => $portfolio_images+@image+'-1280.png',
+			'query'    => '(max-width: 1024px)',
+			},
+			{
+			'src'      => $portfolio_images+@image+'-512.png',
+			'high_src' => $portfolio_images+@image+'-896.png',
+			'query'    => '(max-width: 640px)',
+			},
+		]
+	%>
+</figure>
+
+<div class="entry-body">
+	<%= content_for(@item, :body) %>
+</div>
+
+<% if @primary_block and @item[:url] %>
+	<a href="<%= @item[:url] %>" class="entry-link" target="_blank">
+		Visit Site
+	</a>
+<% end %>

@@ -1,0 +1,23 @@
+#footer {
+	@extend .container;
+	border-top: 2px solid $accent-color;
+	margin-top: rhythm(4);
+	margin-bottom: rhythm(1);
+	padding-top: rhythm(3);
+
+	& > :first-child {
+		margin-top: 0;
+	}
+}
+
+#footer-contents {
+	padding-left: column_span(1);
+
+	& > .copyright {
+		@include adjust-font-size-to($h3-font-size);
+		text-align: right;
+		text-transform: lowercase;
+		font-family: $sans-serif;
+		color: $secondary-text-color;
+	}
+}

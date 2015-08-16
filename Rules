@@ -1,0 +1,136 @@
+#!/usr/bin/env ruby
+
+# A few helpful tips about the Rules file:
+#
+# * The string given to #compile and #route are matching patterns for
+#	identifiers--not for paths. Therefore, you can’t match on extension.
+#
+# * The order of rules is important: for each item, only the first matching
+#	rule is applied.
+#
+# * Item identifiers start and end with a slash (e.g. “/about/” for the file
+#	“content/about.html”). To select all children, grandchildren, … of an
+#	item, use the pattern “/about/*/”; “/about/*” will also select the parent,
+#	because “*” matches zero or more characters.
+
+# Compile sass/style.scss with Compass
+compile '/sass/style/' do
+	filter :sass, Compass.sass_engine_options
+end
+
+# Run all images through a lossless image compressor
+compile '/images/*/' do
+	if item.binary?
+		filter :image_compressor,
+		       :pngout => false,
+			   :advpng => {:level => 1},
+			   :optipng => {:level => 1},
+			   :pngcrush => false,
+			   :svgo => false,
+			   :gifsicle => false
+	end
+end
+
+# Create 960px wide images
+compile '/images/portfolio/*/', :rep => :size_1280 do
+	if item.binary?
+		filter :image_resizer, :width => 1280
+	end
+end
+
+# Create 640px wide images
+compile '/images/portfolio/*/', :rep => :size_896 do
+	if item.binary?
+		filter :image_resizer, :width => 896
+	end
+end
+
+# Create 480px wide images
+compile '/images/portfolio/*/', :rep => :size_512 do
+	if item.binary?
+		filter :image_resizer, :width => 512
+	end
+end
+
+# Compile LaTeX files
+compile '/latex/*/' do
+	filter :latex, :sty_dir => 'styles/' if File.extname(item[:content_filename]) == '.tex'
+end
+
+# Minify JS and merge into scripts.js
+compile '/js/*/' do
+	filter :erb # Necessary for merging into scripts.js
+	filter :uglify_js if File.basename(item[:content_filename], ".*") == 'scripts'
+end
+
+# General compilation
+compile '*' do
+	if item.binary?
+		# Don’t filter binary items
+	else
+		filter :erb
+		layout 'default'
+	end
+end
+
+
+
+# Route compiled style.scss to a CDN CSS dir
+route '/sass/style' do
+	'/cdn/css/style.css'
+end
+
+# Don't route Sass files
+route '/sass/*' do
+	nil
+end
+
+# Only route the concatenated and minified scripts.js file to the CDN
+route '/js/*' do
+	'/cdn' + item.identifier.chop + '.' + item[:extension] if File.basename(item[:content_filename], ".*") == 'scripts'
+end
+
+# Route compiled LaTeX to the root directory as PDF
+route '/latex/*' do
+	if item[:extension] == 'tex'
+		'/' + File.basename(item.raw_filename, '.tex') + '.pdf'
+	else
+		nil
+	end
+end
+
+# Don't route data files
+route %r{^/(contact_info|profiles|portfolio)/.+/$} do
+	nil
+end
+
+route '/images/*' do
+	'/cdn' + item.identifier.chop + '.' + item[:extension]
+end
+
+route '/images/portfolio/*/', :rep => :size_1280 do
+	'/cdn' + item.identifier.chop + '-1280.' + item[:extension]
+end
+
+route '/images/portfolio/*/', :rep => :size_896 do
+	'/cdn' + item.identifier.chop + '-896.' + item[:extension]
+end
+
+route '/images/portfolio/*/', :rep => :size_512 do
+	'/cdn' + item.identifier.chop + '-512.' + item[:extension]
+end
+
+# General routing
+route '*' do
+	if item.binary?
+		# Write item with identifier /foo/ to /foo.ext
+		item.identifier.chop + '.' + item[:extension]
+	else
+		# Write item with identifier /foo/ to /foo/index.html
+		item.identifier + 'index.html'
+	end
+end
+
+
+
+layout '*', :erb
