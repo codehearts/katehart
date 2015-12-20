@@ -8,7 +8,9 @@ module Profile
 	# Caches all profile items
 	def cache_profiles
 		if @@known_profiles == nil
-			@@known_profiles = @items.select { |item| item.identifier.start_with? @@profiles_dir }
+			@@known_profiles = @items.select { |item|
+        item.identifier.to_s.start_with? @@profiles_dir
+      }
 		end
 	end
 
@@ -17,7 +19,8 @@ module Profile
 		# Cache known profiles
 		cache_profiles
 
-		@@known_profiles.select { |item| item.identifier == @@profiles_dir + profile + '/' }.first
+    profile_file = @@profiles_dir + profile + '.*'
+		@@known_profiles.select { |item| item.identifier =~ profile_file }.first
 	end
 
 	# Gets all profile items, or only those with the specified names
@@ -32,8 +35,8 @@ module Profile
 			# Only return profile items with the requested names
 
 			# Prepend the profile path to the profile names
-			profiles = profiles.map { |item| @@profiles_dir + item + '/' }
-			@@known_profiles.select { |item| profiles.include? item.identifier }
+			profiles = profiles.map { |item| @@profiles_dir + item }
+			@@known_profiles.select { |item| profiles.include? item.identifier.to_s }
 		end
 	end
 

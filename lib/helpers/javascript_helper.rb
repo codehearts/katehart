@@ -1,10 +1,14 @@
 module JavascriptConcatenator
 
 	# Content directory where JavaScript is stored
-	@@js_dir   = '/js/'
+	@@js_dir  = '/js/'
+  @@js_file = @@js_dir + 'scripts.js'
 
 	def concatenate_js()
-		scripts = @items.select { |item| item.identifier.start_with? @@js_dir and item.identifier != @@js_dir+'scripts/' }
+		scripts = @items.select { |item|
+        filename = item.identifier.to_s
+        filename.start_with? @@js_dir and filename != @@js_file
+    }
 		concatenated_js = []
 
 		for script in scripts

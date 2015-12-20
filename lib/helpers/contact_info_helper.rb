@@ -8,7 +8,9 @@ module ContactInfo
 	# Caches all contact items
 	def cache_contact_info
 		if @@known_contacts == nil
-			@@known_contacts = @items.select { |item| item.identifier.start_with? @@contacts_dir }
+			@@known_contacts = @items.select { |item|
+        item.identifier.to_s.start_with? @@contacts_dir
+      }
 		end
 	end
 
@@ -17,7 +19,8 @@ module ContactInfo
 		# Cache known contacts
 		cache_contact_info
 
-		@@known_contacts.select { |item| item.identifier == @@contacts_dir + contact_info + '/' }.first
+    contact_file = @@contacts_dir + contact_info + '.*'
+		@@known_contacts.select { |item| item.identifier =~ contact_file }.first
 	end
 
 	# Gets all contact items, or only those with the specified names
@@ -32,8 +35,8 @@ module ContactInfo
 			# Only return contact items with the requested names
 
 			# Prepend the contacts path to the contact names
-			contact_info = contact_info.map { |item| @@contacts_dir + item + '/' }
-			@@known_contacts.select { |item| contact_info.include? item.identifier }
+			contact_info = contact_info.map { |item| @@contacts_dir + item }
+			@@known_contacts.select { |item| contact_info.include? item.identifier.to_s }
 		end
 	end
 
