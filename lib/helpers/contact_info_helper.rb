@@ -26,7 +26,7 @@ module ContactInfo
   # to the given filenames.
   #
   def contact_info_items(contact_info_names = nil)
-    # Return all known contact items if no names were given
+    # Return all contact items if no names were given
     return all_contact_info if contact_info_names.nil?
 
     # Only return contact items with the requested names
@@ -39,7 +39,7 @@ module ContactInfo
   # the specified names in the given order.
   #
   def ordered_contact_info_items(contact_info_names = nil)
-    # Return all known contact items if no names were given
+    # Return all contact items if no names were given
     return all_contact_info if contact_info_names.nil?
    
     # Only return contact items with the requested names,
