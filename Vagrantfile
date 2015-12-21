@@ -64,10 +64,15 @@ Vagrant.configure(2) do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  config.vm.provision "shell", inline: <<-SHELL
-    echo -n 'Enter username for deployment: '; read deploy_name
-	echo "\nHost portfolio\n\tHostName nejt.net\n\tUser ${deploy_name}\n" | sudo tee -a /etc/ssh/ssh_config
+  if Dir.glob("#{File.dirname(__FILE__)}/.vagrant/machines/*/*/action_provision").empty?
+    print 'Enter username for deployment: '
+    username = STDIN.gets.chomp
 
+    cmd = "echo \"\nHost portfolio\n\tHostName nejt.net\n\tUser #{username}\" | sudo tee -a /etc/ssh/ssh_config"
+    config.vm.provision "shell", inline: cmd
+  end
+
+  config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update
     sudo apt-get install -y bundler \
 		imagemagick advancecomp optipng pngquant \
@@ -86,7 +91,9 @@ Vagrant.configure(2) do |config|
 	echo "startup_message off" >> /etc/screenrc
 
 	# Guard needs to poll because the VM won't trigger the file events
-	screen -dmS nanoc bash -c 'bundle exec guard -p -l 3'
-	screen -S nanoc -X screen nanoc view
+	screen -S nanoc -t guard -A -d -m
+	screen -S nanoc -X screen -t view
+	screen -S nanoc -p guard -X stuff $'bundle exec guard -p -l 3\n'
+	screen -S nanoc -p view  -X stuff $'bundle exec nanoc view\n'
   SHELL
 end
