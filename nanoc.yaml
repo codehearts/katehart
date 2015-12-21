@@ -62,8 +62,8 @@ deploy:
     public:
         kind: rsync
         dst:  "portfolio:~/public_html/iamnatehart.com"
-        options: [ "-e ssh '-p 2222'", '-aP', '--delete-after', '--exclude=".git" --exclude="staging" --exclude="sleepless"' ]
+        options: [ "-e ssh '-p 2222'", '-aP', '--delete-after', '--exclude=.git', '--exclude=staging', '--exclude=sleepless' ]
     staging:
         kind: rsync
         dst:  "portfolio:~/public_html/iamnatehart.com/staging"
-        options: [ "-e ssh '-p 2222'", '-aP', '--delete-after', '--exclude=".git"' ]
+        options: [ "-e ssh '-p 2222'", '-aP', '--delete-after', '--exclude=.git' ]
