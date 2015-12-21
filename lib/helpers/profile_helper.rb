@@ -1,65 +1,53 @@
 module Profile
 
-	# Content directory where profiles are stored
-	@@profiles_dir = '/profiles/'
-	# Cache of known profile items
-	@@known_profiles = nil
+  @@profiles_dir   = '/profiles/'
+  @@profiles_cache = nil
 
-	# Caches all profile items
-	def cache_profiles
-		if @@known_profiles == nil
-			@@known_profiles = @items.select { |item|
-        item.identifier.to_s.start_with? @@profiles_dir
-      }
-		end
-	end
+  # Returns a list of all profile items.
+  #
+  def all_profiles
+    @@profiles_cache = @items.select { |item|
+      item.identifier.to_s.start_with? @@profiles_dir
+    } if @@profiles_cache.nil?
 
-	# Gets a single profile item
-	def profile_item(profile)
-		# Cache known profiles
-		cache_profiles
+    return @@profiles_cache
+  end
 
-    profile_file = @@profiles_dir + profile + '.*'
-		@@known_profiles.select { |item| item.identifier =~ profile_file }.first
-	end
+  # Returns a single profile item by filename.
+  #
+  def profile_item(profile_name)
+    profile_file = @@profiles_dir + profile_name + '.*'
+    return all_profiles.select { |item|
+      item.identifier =~ profile_file
+    }.first
+  end
 
-	# Gets all profile items, or only those with the specified names
-	def profile_items(profiles = nil)
-		# Cache known profiles
-		cache_profiles
+  # Returns all profile items, or only those corresponding
+  # to the given filename.
+  #
+  def profile_items(profile_names = nil)
+    # Return all profile items if no names were given
+    return all_profiles if profile_names.nil?
 
-		if profiles == nil
-			# Return all known profile items
-			@@known_profiles
-		else
-			# Only return profile items with the requested names
+    # Only return profile items with the requested names
+    return all_profiles.select { |item|
+      profile_names.any? { |name| item =~ "#{name}.*" }
+    }
+  end
 
-			# Prepend the profile path to the profile names
-			profiles = profiles.map { |item| @@profiles_dir + item }
-			@@known_profiles.select { |item| profiles.include? item.identifier.to_s }
-		end
-	end
+  # Returns all profile items, or only those corresponding to
+  # the specified names in the given order.
+  #
+  def ordered_profile_items(profile_names = nil)
+    # Return all profile items if no names were given
+    return all_profiles if profile_names.nil?
 
-	# Gets all profile items, or only those with the specified names in the specified order
-	def ordered_profile_items(profiles = nil)
-		# Cache known profiles
-		cache_profiles
-
-		if profiles == nil
-			# Return all known profile items
-			@@known_profiles
-		else
-			# Only return profile items with the requested names,
-			# in the requested order
-
-			ordered_profiles = []
-			profiles.each do |profile|
-				ordered_profiles << profile_item(profile)
-			end
-
-			ordered_profiles
-		end
-	end
+    # Only return profile items with the requested names,
+    # in the given order
+    return profile_names.collect { |name|
+      profile_item(name)
+    }
+  end
 
 end
 
