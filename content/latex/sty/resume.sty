@@ -23,6 +23,10 @@
 % Custom colors
 \definecolor{accentcolor}{rgb}{1,0.4784313725,0.6705882353}
 \definecolor{secondarycolor}{rgb}{0.6,0.65,0.6}
+\definecolor{highlightcolor}{HTML}{c42d71}
+
+% Don't bold description list items
+\setlist[description]{font=\normalfont\space}
 
 % Formatting for section titles and emphasis
 \titleformat{\section}
@@ -35,7 +39,7 @@
 	{\thesubsection}
 	{1em}
 	{\hspace{-10pt}\textcolor{accentcolor}{\rule[-.2\baselineskip]{1.5pt}{.9\baselineskip}}\hspace{8pt}\rmfamily}
-\DeclareTextFontCommand{\emph}{\color{accentcolor}}
+\DeclareTextFontCommand{\emph}{\color{highlightcolor}}
 \titlespacing{\section}{0pt}{0pt}{-7.5pt}
 \titlespacing{\subsection}{0pt}{0pt}{-7.5pt}
 
@@ -49,9 +53,10 @@
 \setlength{\fboxsep}{1mm}
 \setlength{\fboxrule}{1pt}
 
-\newcommand{\button}[2]{\href{#1}{\color{accentcolor}{\sffamily#2}}}
+\newcommand{\button}[2]{\href{#1}{\color{highlightcolor}{\sffamily#2}}}
 
 \hypersetup{%
 	colorlinks=true,
-	linkcolor=accentcolor
+	linkcolor=highlightcolor,
+	urlcolor=highlightcolor,
 }
