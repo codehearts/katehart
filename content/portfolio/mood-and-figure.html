@@ -13,8 +13,8 @@ url: http://moodandfigure.com
 <% end %>
 
 <%=
-render $portfolio_layouts+'entry',
-:image => 'mood-and-figure/home',
-:image_alt => 'Screenshot of the Mood &amp; Figure home page',
+render $layouts['portfolio entry'],
+:image         => 'mood-and-figure/home',
+:image_alt     => 'Screenshot of the Mood &amp; Figure home page',
 :primary_block => true
 %>

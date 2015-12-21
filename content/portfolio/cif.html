@@ -13,8 +13,8 @@ url: https://cif.rochester.edu
 <% end %>
 
 <%=
-render $portfolio_layouts+'entry',
-:image => 'cif/mockup',
-:image_alt => 'Mockup of the CIF home page',
+render $layouts['portfolio entry'],
+:image         => 'cif/mockup',
+:image_alt     => 'Mockup of the CIF home page',
 :primary_block => true
 %>

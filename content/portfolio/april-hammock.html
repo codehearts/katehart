@@ -11,8 +11,8 @@ url: http://aprilhammockstudio.com/
 <% end %>
 
 <%=
-render $portfolio_layouts+'entry',
-:image => 'april-hammock/home',
-:image_alt => 'Screenshot of the April Hammock Studio website',
+render $layouts['portfolio entry'],
+:image         => 'april-hammock/home',
+:image_alt     => 'Screenshot of the April Hammock Studio website',
 :primary_block => true
 %>

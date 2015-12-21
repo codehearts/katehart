@@ -11,8 +11,8 @@ url: http://nejt.net
 <% end %>
 
 <%=
-render $portfolio_layouts+'entry',
-:image => 'nejt/home',
-:image_alt => 'Screenshot of the Nejt home page',
+render $layouts['portfolio entry'],
+:image         => 'nejt/home',
+:image_alt     => 'Screenshot of the Nejt home page',
 :primary_block => true
 %>
