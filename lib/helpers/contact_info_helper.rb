@@ -1,65 +1,53 @@
 module ContactInfo
 
-	# Content directory where contacts are stored
-	@@contacts_dir = '/contact_info/'
-	# Cache of known contact items
-	@@known_contacts = nil
+  @@contacts_dir   = '/contact_info/'
+  @@contacts_cache = nil
 
-	# Caches all contact items
-	def cache_contact_info
-		if @@known_contacts == nil
-			@@known_contacts = @items.select { |item|
-        item.identifier.to_s.start_with? @@contacts_dir
-      }
-		end
-	end
+  # Returns a list of all contact info items.
+  #
+  def all_contact_info
+    @@contacts_cache = @items.select { |item|
+      item.identifier.to_s.start_with? @@contacts_dir
+    } if @@contacts_cache.nil?
 
-	# Gets a single contact item
-	def contact_info_item(contact_info)
-		# Cache known contacts
-		cache_contact_info
+    return @@contacts_cache
+  end
 
-    contact_file = @@contacts_dir + contact_info + '.*'
-		@@known_contacts.select { |item| item.identifier =~ contact_file }.first
-	end
+  # Returns a single contact item by filename.
+  #
+  def contact_info_item(contact_info_name)
+    contact_file = @@contacts_dir + contact_info_name + '.*'
+    return all_contact_info.select { |item|
+      item.identifier =~ contact_file
+    }.first
+  end
 
-	# Gets all contact items, or only those with the specified names
-	def contact_info_items(contact_info = nil)
-		# Cache known contacts
-		cache_contact_info
+  # Returns all contact items, or only those corresponding
+  # to the given filenames.
+  #
+  def contact_info_items(contact_info_names = nil)
+    # Return all known contact items if no names were given
+    return all_contact_info if contact_info_names.nil?
 
-		if contact_info == nil
-			# Return all known contact items
-			@@known_contacts
-		else
-			# Only return contact items with the requested names
+    # Only return contact items with the requested names
+    return all_contact_info.select { |item|
+      contact_info_names.any? { |name| item =~ "#{name}.*" }
+    }
+  end
 
-			# Prepend the contacts path to the contact names
-			contact_info = contact_info.map { |item| @@contacts_dir + item }
-			@@known_contacts.select { |item| contact_info.include? item.identifier.to_s }
-		end
-	end
-
-	# Gets all contact items, or only those with the specified names in the specified order
-	def ordered_contact_info_items(contact_info = nil)
-		# Cache known contacts
-		cache_contact_info
-
-		if contact_info == nil
-			# Return all known contact items
-			@@known_contacts
-		else
-			# Only return contact items with the requested names,
-			# in the requested order
-
-			ordered_contact_info = []
-			contact_info.each do |contact|
-				ordered_contact_info << contact_info_item(contact)
-			end
-
-			ordered_contact_info
-		end
-	end
+  # Returns all contact items, or only those corresponding to
+  # the specified names in the given order.
+  #
+  def ordered_contact_info_items(contact_info_names = nil)
+    # Return all known contact items if no names were given
+    return all_contact_info if contact_info_names.nil?
+   
+    # Only return contact items with the requested names,
+    # in the given order
+    return contact_info_names.collect { |name|
+      contact_info_item(name)
+    }
+  end
 
 end
 
