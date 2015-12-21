@@ -10,7 +10,7 @@ $images           = $cdn + 'images/'
 $profile_images   = $images + 'profile/'
 $portfolio_images = $images + 'portfolio/'
 
-$partial_layouts     = 'partials/'
+$partial_layouts     = '/partials/'
 $profile_layouts     = $partial_layouts + 'profiles/'
 $portfolio_layouts   = $partial_layouts + 'portfolio/'
 $in_progress_layouts = $portfolio_layouts + 'in-progress/'
