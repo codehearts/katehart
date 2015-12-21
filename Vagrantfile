@@ -72,15 +72,19 @@ Vagrant.configure(2) do |config|
     sudo apt-get install -y bundler \
 		imagemagick advancecomp optipng pngquant \
 		jhead jpegoptim libjpeg-turbo-progs \
-		texlive-full
+		texlive-latex-extra latexmk xzdec
 	sudo apt-get -y dist-upgrade
+
+	tlmgr init-usertree
+	tlmgr install sourcesanspro
+	tlmgr install ly1
 
 	cd /vagrant
 	bundle install
 	bundle update
 
-	cd /vagrant
 	echo "startup_message off" >> /etc/screenrc
+
 	# Guard needs to poll because the VM won't trigger the file events
 	screen -dmS nanoc bash -c 'bundle exec guard -p -l 3'
 	screen -S nanoc -X screen nanoc view
