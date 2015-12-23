@@ -77,19 +77,19 @@ Vagrant.configure(2) do |config|
     sudo apt-get install -y bundler \
 		imagemagick advancecomp optipng pngquant \
 		jhead jpegoptim libjpeg-turbo-progs \
-		texlive-latex-extra latexmk xzdec
+		texlive latexmk xzdec
 	sudo apt-get -y dist-upgrade
+
 	echo "startup_message off" >> /etc/screenrc
   SHELL
 
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
 	tlmgr init-usertree
-	tlmgr install sourcesanspro ly1
+	tlmgr install sourcesanspro ly1 mweights footmisc titlesec enumitem
 
 	cd /vagrant
 	bundle install
 	bundle update
-
 
 	# Guard needs to poll because the VM won't trigger the file events
 	screen -S nanoc -t guard -A -d -m
