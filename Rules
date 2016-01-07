@@ -43,15 +43,15 @@ compile '/images/**/*' do
   write "/cdn#{item.identifier.to_s}"
 end
 
-# Create 1280/896/512px wide images of portfolio entries
+# Create 1280/820/512px wide images of portfolio entries
 compile '/images/portfolio/**/*', rep: :size_1280 do
   filter :image_resizer, :width => 1280 if item.binary?
   write "/cdn#{item.identifier.without_ext}-1280.#{item.identifier.ext}"
 end
 
-compile '/images/portfolio/**/*', rep: :size_896 do
-  filter :image_resizer, :width => 896 if item.binary?
-  write "/cdn#{item.identifier.without_ext}-896.#{item.identifier.ext}"
+compile '/images/portfolio/**/*', rep: :size_820 do
+  filter :image_resizer, :width => 820 if item.binary?
+  write "/cdn#{item.identifier.without_ext}-820.#{item.identifier.ext}"
 end
 
 compile '/images/portfolio/**/*', rep: :size_512 do

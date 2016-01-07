@@ -24,6 +24,8 @@
 @import 'modules/portfolio-entry';
 
 @media all and (max-width: 1024px) {
+	@import 'breakpoint-medium/base/layout';
+
 	@import 'breakpoint-medium/placeholders/image-right';
 	@import 'breakpoint-medium/placeholders/image-left';
 

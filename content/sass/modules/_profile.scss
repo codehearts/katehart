@@ -1,11 +1,12 @@
 .profile-body {
 	@extend %image-right-body;
-	margin-left: column_span(1) + column_gutter();
 }
 
 .profile-image {
 	@extend %image-right;
 	margin-top: -5%;
+	margin-right: 5%;
+	margin-left: -5%;
 	position: relative; // Necessary for the color overlay
 
 	// Triangular clipping mask
@@ -32,12 +33,12 @@
 
 	img {
 		box-shadow: none;
+		outline: none;
 	}
 }
 
 .profile {
 	& > footer {
 		margin-top: rhythm(1);
-		margin-left: column_span(1) + column_gutter();
 	}
 }
