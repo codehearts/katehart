@@ -2,7 +2,7 @@
 
 $contact_info = ['email', 'github', 'resume']
 
-#$cdn              = 'http://cdn.staging.iamnatehart.com/'
+#$cdn              = 'http://cdn.staging.katehart.me/'
 $cdn              = 'cdn/'
 $js_dir           = $cdn + 'js/'
 $css_dir          = $cdn + 'css/'
