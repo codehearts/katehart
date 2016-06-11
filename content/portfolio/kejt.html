@@ -1,0 +1,18 @@
+---
+title: Kejt
+date: March 2012
+url: http://kejt.me
+---
+
+<% content_for :body do %>
+<p>Kejt is a multimedia blog for posting my creative works. It also serves as a playground for me to experiment with new web technologies.</p>
+
+<p>Like most of my side projects, it serves as a safe place to experiment and try new things. While Kejt does make use of newer technology like html5 audio, it degrades gracefully in less capable browsers.</p>
+<% end %>
+
+<%=
+render $layouts['portfolio entry'],
+:image         => 'kejt/home',
+:image_alt     => 'Screenshot of the Kejt home page',
+:primary_block => true
+%>
