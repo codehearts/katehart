@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/vivid64"
+  config.vm.box = "velocity42/xenial64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -74,7 +74,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update
-    sudo apt-get install -y bundler \
+    sudo apt-get install -y screen bundler \
 		imagemagick advancecomp optipng pngquant \
 		jhead jpegoptim libjpeg-turbo-progs \
 		texlive latexmk xzdec
@@ -84,6 +84,8 @@ Vagrant.configure(2) do |config|
   SHELL
 
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
+	# Necessary to use TexLive 2015 packages
+	tlmgr option repository ftp://tug.org/historic/systems/texlive/2015/tlnet-final
 	tlmgr init-usertree
 	tlmgr install sourcesanspro ly1 mweights footmisc titlesec enumitem
 
