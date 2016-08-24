@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "velocity42/xenial64"
+  config.vm.box = "terrywang/archlinux"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -68,35 +68,43 @@ Vagrant.configure(2) do |config|
     print 'Enter username for deployment: '
     username = STDIN.gets.chomp
 
-    cmd = "echo \"\nHost portfolio\n\tHostName nejt.net\n\tUser #{username}\" | sudo tee -a /etc/ssh/ssh_config"
+    cmd = "echo \"\nHost portfolio\n\tHostName katehart.me\n\tUser #{username}\" | sudo tee -a /etc/ssh/ssh_config"
     config.vm.provision "shell", inline: cmd
   end
 
   config.vm.provision "shell", inline: <<-SHELL
-    sudo apt-get update
-    sudo apt-get install -y screen bundler \
-		imagemagick advancecomp optipng pngquant \
-		jhead jpegoptim libjpeg-turbo-progs \
-		texlive latexmk xzdec
-	sudo apt-get -y dist-upgrade
+    sudo pacman --noconfirm --noprogressbar --needed --quiet -Syu screen ruby-bundler \
+    imagemagick optipng jhead jpegoptim libjpeg-turbo \
+    texlive-core texlive-fontsextra texlive-latexextra
 
-	echo "startup_message off" >> /etc/screenrc
+    # Fix permissions issue with Ruby gems
+    chmod 755 /usr/lib/ruby/gems/*/specifications/*.gemspec
+
+    echo "startup_message off" >> /etc/screenrc
   SHELL
 
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
-	# Necessary to use TexLive 2015 packages
-	tlmgr option repository ftp://tug.org/historic/systems/texlive/2015/tlnet-final
-	tlmgr init-usertree
-	tlmgr install sourcesanspro ly1 mweights footmisc titlesec enumitem
+	if cmd_loc="$(type -p yaourt)" || ! [ -z "$cmd_loc" ]; then
+		git clone https://aur.archlinux.org/package-query.git
+		cd package-query; makepkg -si; cd ..
+
+		git clone https://aur.archlinux.org/yaourt.git
+		cd yaourt; makepkg -si; cd ..
+
+		rm -rf yaourt* package-query*
+	fi
+  
+	yaourt --noconfirm --needed -S advancecomp pngquant latex-mk
 
 	cd /vagrant
-	bundle install
-	bundle update
+	bundle install --quiet
+	bundle update --quiet
 
 	# Guard needs to poll because the VM won't trigger the file events
 	screen -S nanoc -t guard -A -d -m
 	screen -S nanoc -X screen -t view
 	screen -S nanoc -p guard -X stuff $'bundle exec guard -p -l 3\n'
 	screen -S nanoc -p view  -X stuff $'bundle exec nanoc view\n'
+	screen -S nanoc -p deploy  -X stuff $'bundle exec nanoc deploy --target staging'
   SHELL
 end
