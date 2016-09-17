@@ -61,9 +61,9 @@ data_sources:
 deploy:
     public:
         kind: rsync
-        dst:  "portfolio:~/public_html/katehart.me"
-        options: [ "-e ssh '-p 2222'", '-aP', '--delete-after', '--exclude=.git', '--exclude=staging', '--exclude=sleepless' ]
+        dst:  "portfolio:~/public_html/"
+        options: [ "-e ssh '-p 2222'", '-aP', '--exclude=.git' ]
     staging:
         kind: rsync
-        dst:  "portfolio:~/public_html/katehart.me/staging"
-        options: [ "-e ssh '-p 2222'", '-aP', '--delete-after', '--exclude=.git' ]
+        dst:  "portfolio:~/public_html/staging"
+        options: [ "-e ssh '-p 2222'", '-aP', '--exclude=.git' ]
