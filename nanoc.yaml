@@ -61,9 +61,9 @@ data_sources:
 deploy:
     public:
         kind: rsync
-        dst:  "portfolio:~/public_html/"
-        options: [ "-e ssh '-p 2222'", '-aP', '--exclude=.git' ]
+        dst:  "portfolio:~/public_html"
+        options: [ "-e ssh '-p 2222'", '-aP', '--perms', '--chmod=a+r', '--exclude=.git' ]
     staging:
         kind: rsync
         dst:  "portfolio:~/public_html/staging"
-        options: [ "-e ssh '-p 2222'", '-aP', '--exclude=.git' ]
+        options: [ "-e ssh '-p 2222'", '-aP', '--perms', '--chmod=a+r', '--exclude=.git' ]
