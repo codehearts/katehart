@@ -77,34 +77,39 @@ Vagrant.configure(2) do |config|
     imagemagick optipng jhead jpegoptim libjpeg-turbo \
     texlive-core texlive-fontsextra texlive-latexextra
 
-    # Fix permissions issue with Ruby gems
-    chmod 755 /usr/lib/ruby/gems/*/specifications/*.gemspec
-
     echo "startup_message off" >> /etc/screenrc
   SHELL
 
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
-	if cmd_loc="$(type -p yaourt)" || ! [ -z "$cmd_loc" ]; then
-		git clone https://aur.archlinux.org/package-query.git
-		cd package-query; makepkg -si; cd ..
+    export BUNDLE_PATH=~/.gems
+    echo "export BUNDLE_PATH=~/.gems" >> ~/.bashrc
 
-		git clone https://aur.archlinux.org/yaourt.git
-		cd yaourt; makepkg -si; cd ..
+    # Install yaourt if it's not already
+    if cmd_loc="$(type -p yaourt)" || ! [ -z "$cmd_loc" ]; then
+      git clone https://aur.archlinux.org/package-query.git
+      cd package-query; makepkg -si; cd ..
 
-		rm -rf yaourt* package-query*
-	fi
-  
-	yaourt --noconfirm --needed -S advancecomp pngquant latex-mk
+      git clone https://aur.archlinux.org/yaourt.git
+      cd yaourt; makepkg -si; cd ..
 
-	cd /vagrant
-	bundle install --quiet
-	bundle update --quiet
+      rm -rf yaourt* package-query*
+    fi
+    
+    yaourt --noconfirm --needed -S advancecomp pngquant latex-mk
 
-	# Guard needs to poll because the VM won't trigger the file events
-	screen -S nanoc -t guard -A -d -m
-	screen -S nanoc -X screen -t view
-	screen -S nanoc -p guard -X stuff $'bundle exec guard -p -l 3\n'
-	screen -S nanoc -p view  -X stuff $'bundle exec nanoc view\n'
-	screen -S nanoc -p deploy  -X stuff $'bundle exec nanoc deploy --target staging'
+    echo "alias nsc='. ~/nanoc_screen'" >> ~/.bashrc
+
+    echo "cd /vagrant
+# Guard needs to poll because the VM won't trigger the file events
+screen -S nanoc -t guard -A -d -m
+screen -S nanoc -X screen -t view
+screen -S nanoc -p guard -X stuff \$'bundle exec guard -p -l 3\\n'
+screen -S nanoc -p view  -X stuff \$'bundle exec nanoc view\\n'
+screen -S nanoc -p deploy  -X stuff \$'bundle exec nanoc deploy --target staging'" >> /home/vagrant/nanoc_screen
+    chmod +x ~/nanoc_screen
+
+    cd /vagrant
+    bundle install --quiet
+    bundle update --quiet
   SHELL
 end
